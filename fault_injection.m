@@ -1,0 +1,28 @@
+figure(1);
+load('consecutiveLostEvery1s.mat');
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'green');
+load('consecutiveLostEvery10s.mat');
+hold on;
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'blue');
+load('consecutiveLostEvery100s.mat');
+hold on;
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'cyan');
+hold on;
+load('noError0.4.mat');
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'red');
+load('noErrornoDelay.mat');
+hold on;
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'black');
+legend('consecutive lost every 0.1s (green)', 'consecutive lost every 1s(blue)', 'consecutive lost every 10s(cyan)','no error delay0.4(red)','noErrornoDelay(black)');
+
+figure(2);
+load('consecutiveLostEvery10s.mat');
+hold on;
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'blue');
+load('nonconsecutiveLost0.5.mat');
+hold on;
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'red');
+load('noErrornoDelay.mat');
+hold on;
+plot(TotalHeatTransfer.time,TotalHeatTransfer.data, 'Color', 'black');
+legend('consecutive lost every 1s (blue)', 'non consecutive lost(red)', 'noErrornoDelay(black)');
