@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1424"
+    ComputedModelVersion    "1.1488"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1450.0, 55.0, 1319.0, 782.0]
+      Location		      [51.0, 25.0, 1453.0, 792.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,9 +55,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1285.0, 609.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [365.33304647160151, 366.17885829030433]
+	  Extents		  [1419.0, 619.0]
+	  ZoomFactor		  [0.5]
+	  Offset		  [-197.76179304122775, 258.68333333333385]
 	}
 	Object {
 	  $ObjectID		  6
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wangwenchen"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 11 14:36:14 2016"
-  RTWModifiedTimeStamp	  382286111
-  ModelVersionFormat	  "1.%<AutoIncrement:1424>"
+  LastModifiedDate	  "Mon Apr 11 21:33:13 2016"
+  RTWModifiedTimeStamp	  382311185
+  ModelVersionFormat	  "1.%<AutoIncrement:1488>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1044,7 +1044,7 @@ Model {
   }
   System {
     Name		    "HeatExchanger"
-    Location		    [1450, 55, 2769, 837]
+    Location		    [51, 25, 1504, 817]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1056,21 +1056,21 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "50"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "478"
+    SIDHighWatermark	    "491"
     Block {
       BlockType		      Clock
       Name		      "Clock"
       SID		      "163"
-      Position		      [395, 660, 415, 680]
+      Position		      [670, 660, 690, 680]
       ZOrder		      -5
     }
     Block {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "389"
-      Position		      [465, 950, 495, 980]
+      Position		      [740, 950, 770, 980]
       ZOrder		      927
       Value		      "700"
     }
@@ -1078,7 +1078,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "390"
-      Position		      [465, 1020, 495, 1050]
+      Position		      [740, 1020, 770, 1050]
       ZOrder		      928
       Value		      "550"
     }
@@ -1086,7 +1086,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "Data Store\nMemory"
       SID		      "442"
-      Position		      [1145, 655, 1227, 705]
+      Position		      [1420, 655, 1502, 705]
       ZOrder		      951
       DataStoreName	      "counter_global"
       ReadBeforeWriteMsg      "warning"
@@ -1099,7 +1099,7 @@ Model {
       BlockType		      DataStoreMemory
       Name		      "Data Store\nMemory1"
       SID		      "443"
-      Position		      [1260, 655, 1372, 705]
+      Position		      [1535, 655, 1647, 705]
       ZOrder		      952
       DataStoreName	      "ydelay_global"
       ReadBeforeWriteMsg      "warning"
@@ -1114,7 +1114,7 @@ Model {
       Name		      "Delayed Data Up1"
       SID		      "233"
       Ports		      [3, 2]
-      Position		      [905, 499, 1075, 611]
+      Position		      [1180, 499, 1350, 611]
       ZOrder		      27
       BlockMirror	      on
       BackgroundColor	      "[0.000000, 0.819608, 0.000000]"
@@ -1282,11 +1282,183 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Delayed Data Up2"
+      SID		      "480"
+      Ports		      [3, 2]
+      Position		      [190, 654, 360, 766]
+      ZOrder		      963
+      BlockMirror	      on
+      BackgroundColor	      "[0.000000, 0.819608, 0.000000]"
+      LibraryVersion	      "1.31"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      SystemSampleTime	      "0.1"
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Delayed Data Up2"
+	Location		[219, 337, 814, 775]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"45"
+	SIDPrevWatermark	"17"
+	Block {
+	  BlockType		  Inport
+	  Name			  "control_yactual_value"
+	  SID			  "480::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "control_ysensor_value"
+	  SID			  "480::24"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  -2
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "control_ynetwork_delay"
+	  SID			  "480::45"
+	  Position		  [20, 171, 40, 189]
+	  ZOrder		  12
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "480::42"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  9
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "480::41"
+	  Tag			  "Stateflow S-Function HeatExchanger 5"
+	  Ports			  [3, 3]
+	  Position		  [180, 100, 230, 180]
+	  ZOrder		  8
+	  FunctionName		  "sf_sfun"
+	  Parameters		  "structure"
+	  PortCounts		  "[3 3]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "control_signal_vector"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "control_delay_vector"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "480::43"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  10
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "control_signal_vector"
+	  SID			  "480::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -6
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "control_delay_vector"
+	  SID			  "480::44"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  11
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "control_yactual_value"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "control_ysensor_value"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "control_ynetwork_delay"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "control_signal_vector"
+	  ZOrder		  4
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "control_signal_vector"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "control_delay_vector"
+	  ZOrder		  5
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "control_delay_vector"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      Display
       Name		      "Display"
       SID		      "419"
       Ports		      [1]
-      Position		      [920, 1130, 1010, 1160]
+      Position		      [1195, 1130, 1285, 1160]
       ZOrder		      939
       Decimation	      "1"
     }
@@ -1295,7 +1467,7 @@ Model {
       Name		      "Display1"
       SID		      "446"
       Ports		      [1]
-      Position		      [820, 675, 940, 765]
+      Position		      [1095, 675, 1215, 765]
       ZOrder		      955
       Decimation	      "1"
     }
@@ -1304,7 +1476,7 @@ Model {
       Name		      "Display11"
       SID		      "305"
       Ports		      [1]
-      Position		      [465, 740, 555, 790]
+      Position		      [740, 740, 830, 790]
       ZOrder		      49
       Decimation	      "1"
     }
@@ -1313,7 +1485,7 @@ Model {
       Name		      "Display3"
       SID		      "195"
       Ports		      [1]
-      Position		      [1200, 397, 1290, 473]
+      Position		      [1475, 397, 1565, 473]
       ZOrder		      -12
       NamePlacement	      "alternate"
       Decimation	      "1"
@@ -1323,7 +1495,7 @@ Model {
       Name		      "Display5"
       SID		      "287"
       Ports		      [1]
-      Position		      [1505, 753, 1595, 807]
+      Position		      [1780, 753, 1870, 807]
       ZOrder		      36
       Decimation	      "1"
     }
@@ -1332,7 +1504,7 @@ Model {
       Name		      "Display7"
       SID		      "289"
       Ports		      [1]
-      Position		      [840, 410, 930, 460]
+      Position		      [1115, 410, 1205, 460]
       ZOrder		      38
       Decimation	      "1"
     }
@@ -1341,7 +1513,7 @@ Model {
       Name		      "Heat Transfer (MW)"
       SID		      "418"
       Ports		      [1]
-      Position		      [980, 1079, 1010, 1111]
+      Position		      [1255, 1079, 1285, 1111]
       ZOrder		      938
       Floating		      off
       Location		      [218, 122, 987, 485]
@@ -1375,7 +1547,7 @@ Model {
       BlockType		      Constant
       Name		      "Hot leg flow kg/s"
       SID		      "388"
-      Position		      [465, 880, 495, 910]
+      Position		      [740, 880, 770, 910]
       ZOrder		      925
       Value		      "350"
     }
@@ -1384,7 +1556,7 @@ Model {
       Name		      "Mux"
       SID		      "452"
       Ports		      [3, 1]
-      Position		      [635, 686, 640, 744]
+      Position		      [910, 686, 915, 744]
       ZOrder		      959
       ShowName		      off
       Inputs		      "3"
@@ -1395,14 +1567,14 @@ Model {
       Name		      "PI Controller with Integral Anti-windup for HX1"
       SID		      "308"
       Ports		      [4, 1]
-      Position		      [440, 468, 555, 617]
+      Position		      [715, 468, 830, 617]
       ZOrder		      922
       BlockMirror	      on
       BackgroundColor	      "blue"
       RequestExecContextInheritance off
       System {
 	Name			"PI Controller with Integral Anti-windup for HX1"
-	Location		[2226, 42, 3545, 824]
+	Location		[1817, 122, 3136, 904]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1827,7 +1999,7 @@ Model {
       BlockType		      Constant
       Name		      "P_demand (MW)2"
       SID		      "329"
-      Position		      [665, 405, 695, 435]
+      Position		      [940, 405, 970, 435]
       ZOrder		      923
       BlockMirror	      on
       Value		      "42"
@@ -1837,7 +2009,7 @@ Model {
       Name		      "Primary Heat Exchanger Lumped Model #1"
       SID		      "330"
       Ports		      [4, 3]
-      Position		      [530, 856, 810, 1309]
+      Position		      [805, 856, 1085, 1309]
       ZOrder		      924
       BackgroundColor	      "cyan"
       RequestExecContextInheritance off
@@ -3098,7 +3270,7 @@ Model {
       Name		      "Sampling1"
       SID		      "239"
       Ports		      [3, 1]
-      Position		      [1260, 974, 1335, 1076]
+      Position		      [1535, 974, 1610, 1076]
       ZOrder		      21
       RequestExecContextInheritance off
       System {
@@ -3198,7 +3370,7 @@ Model {
       Name		      "Secondary Temp Out"
       SID		      "392"
       Ports		      [1]
-      Position		      [930, 889, 960, 921]
+      Position		      [1205, 889, 1235, 921]
       ZOrder		      932
       Floating		      off
       Location		      [704, 287, 1341, 680]
@@ -3230,7 +3402,7 @@ Model {
       BlockType		      Step
       Name		      "Step"
       SID		      "450"
-      Position		      [605, 465, 635, 495]
+      Position		      [880, 465, 910, 495]
       ZOrder		      957
       BlockRotation	      270
       Time		      "20"
@@ -3242,7 +3414,7 @@ Model {
       Name		      "Sum"
       SID		      "449"
       Ports		      [2, 1]
-      Position		      [610, 410, 630, 430]
+      Position		      [885, 410, 905, 430]
       ZOrder		      956
       BlockMirror	      on
       ShowName		      off
@@ -3257,7 +3429,7 @@ Model {
       Name		      "To Workspace"
       SID		      "391"
       Ports		      [1]
-      Position		      [960, 985, 1055, 1015]
+      Position		      [1235, 985, 1330, 1015]
       ZOrder		      931
       VariableName	      "primarytempout"
       MaxDataPoints	      "inf"
@@ -3271,7 +3443,7 @@ Model {
       Name		      "To Workspace1"
       SID		      "164"
       Ports		      [1]
-      Position		      [465, 655, 525, 685]
+      Position		      [740, 655, 800, 685]
       ZOrder		      -28
       VariableName	      "TIME"
       MaxDataPoints	      "inf"
@@ -3282,7 +3454,7 @@ Model {
       Name		      "To Workspace2"
       SID		      "417"
       Ports		      [1]
-      Position		      [425, 817, 525, 853]
+      Position		      [700, 817, 800, 853]
       ZOrder		      937
       VariableName	      "CONTROL_ACTION"
       MaxDataPoints	      "inf"
@@ -3296,7 +3468,7 @@ Model {
       Name		      "To Workspace3"
       SID		      "444"
       Ports		      [1]
-      Position		      [1035, 1192, 1145, 1238]
+      Position		      [1310, 1192, 1420, 1238]
       ZOrder		      953
       VariableName	      "TotalHeatTransfer"
       MaxDataPoints	      "inf"
@@ -3310,7 +3482,7 @@ Model {
       Name		      "To Workspace4"
       SID		      "445"
       Ports		      [1]
-      Position		      [1100, 867, 1210, 913]
+      Position		      [1375, 867, 1485, 913]
       ZOrder		      954
       VariableName	      "SecondaryTOUT"
       MaxDataPoints	      "inf"
@@ -3324,7 +3496,7 @@ Model {
       Name		      "To Workspace5"
       SID		      "196"
       Ports		      [1]
-      Position		      [1420, 467, 1520, 503]
+      Position		      [1695, 467, 1795, 503]
       ZOrder		      -32
       VariableName	      "Signal_measure"
       MaxDataPoints	      "inf"
@@ -3335,7 +3507,7 @@ Model {
       Name		      "To Workspace6"
       SID		      "451"
       Ports		      [1]
-      Position		      [695, 687, 770, 723]
+      Position		      [970, 687, 1045, 723]
       ZOrder		      958
       VariableName	      "delayedsignals"
       MaxDataPoints	      "inf"
@@ -3349,7 +3521,7 @@ Model {
       Name		      "To Workspace7"
       SID		      "453"
       Ports		      [1]
-      Position		      [855, 630, 915, 660]
+      Position		      [1130, 630, 1190, 660]
       ZOrder		      960
       VariableName	      "delay"
       MaxDataPoints	      "inf"
@@ -3363,7 +3535,7 @@ Model {
       Name		      "To Workspace8"
       SID		      "454"
       Ports		      [1]
-      Position		      [485, 380, 545, 410]
+      Position		      [760, 380, 820, 410]
       ZOrder		      961
       VariableName	      "refinput"
       MaxDataPoints	      "inf"
@@ -3377,7 +3549,7 @@ Model {
       Name		      "Tossim Up"
       SID		      "194"
       Ports		      [1, 3]
-      Position		      [1200, 505, 1380, 605]
+      Position		      [1475, 505, 1655, 605]
       ZOrder		      -34
       BlockMirror	      on
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
@@ -3537,10 +3709,173 @@ Model {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "Tossim Up1"
+      SID		      "479"
+      Ports		      [1, 3]
+      Position		      [430, 660, 610, 760]
+      ZOrder		      962
+      BlockMirror	      on
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      LibraryVersion	      "1.31"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      SystemSampleTime	      "0.1"
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Tossim Up1"
+	Location		[219, 337, 814, 775]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"46"
+	SIDPrevWatermark	"20"
+	Block {
+	  BlockType		  Inport
+	  Name			  "control_actual_value"
+	  SID			  "479::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "479::43"
+	  Ports			  [1, 1]
+	  Position		  [270, 245, 320, 285]
+	  ZOrder		  9
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "479::42"
+	  Tag			  "Stateflow S-Function HeatExchanger 4"
+	  Ports			  [1, 4]
+	  Position		  [180, 107, 230, 208]
+	  ZOrder		  8
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 4]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "control_actual_value1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "control_ysensor_value"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "control_ynetwork_delay"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "479::44"
+	  Position		  [460, 256, 480, 274]
+	  ZOrder		  10
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "control_actual_value1"
+	  SID			  "479::22"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "control_ysensor_value"
+	  SID			  "479::20"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  -6
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "control_ynetwork_delay"
+	  SID			  "479::46"
+	  Position		  [460, 171, 480, 189]
+	  ZOrder		  12
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "control_actual_value"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "control_actual_value1"
+	  ZOrder		  2
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "control_actual_value1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "control_ysensor_value"
+	  ZOrder		  3
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "control_ysensor_value"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "control_ynetwork_delay"
+	  ZOrder		  4
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "control_ynetwork_delay"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "Variable Delay Block"
       SID		      "427"
       Ports		      [2, 3]
-      Position		      [685, 482, 770, 638]
+      Position		      [960, 482, 1045, 638]
       ZOrder		      947
       BlockMirror	      on
       RequestExecContextInheritance off
@@ -3770,6 +4105,99 @@ Model {
 	}
       }
     }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Variable Delay Block1"
+      SID		      "481"
+      Ports		      [2, 1]
+      Position		      [35, 657, 120, 768]
+      ZOrder		      964
+      BlockMirror	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"Variable Delay Block1"
+	Location		[1698, 98, 3151, 890]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"142"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Control Signal vector"
+	  SID			  "482"
+	  Position		  [420, 38, 450, 52]
+	  ZOrder		  946
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Control Delay vector"
+	  SID			  "483"
+	  Position		  [420, 83, 450, 97]
+	  ZOrder		  955
+	  BlockMirror		  on
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Discrete Variable\nTime Delay"
+	  SID			  "486"
+	  Ports			  [2, 1]
+	  Position		  [70, 24, 175, 111]
+	  ZOrder		  941
+	  BlockMirror		  on
+	  LibraryVersion	  "1.40"
+	  FontName		  "Arial"
+	  SourceBlock		  "powerlib_meascontrol/Additional Components/Discrete Variable\nTime Delay"
+	  SourceType		  "Discrete Variable Time Delay"
+	  ContentPreviewEnabled	  off
+	  MaxDelay		  "2"
+	  InitialValue		  "700"
+	  Ts			  "delta_t"
+	  DFT			  on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Delayed control signal #1"
+	  SID			  "489"
+	  Position		  [20, 63, 50, 77]
+	  ZOrder		  950
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Discrete Variable\nTime Delay"
+	  SrcPort		  1
+	  DstBlock		  "Delayed control signal #1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "Control Signal vector"
+	  SrcPort		  1
+	  DstBlock		  "Discrete Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "Control Delay vector"
+	  SrcPort		  1
+	  DstBlock		  "Discrete Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
+    }
     Line {
       ZOrder		      1
       SrcBlock		      "Clock"
@@ -3942,26 +4370,26 @@ Model {
       ZOrder		      103
       SrcBlock		      "PI Controller with Integral Anti-windup for HX1"
       SrcPort		      1
-      Points		      [-54, 0; 0, 220]
+      Points		      [-54, 0; 0, 165]
       Branch {
-	ZOrder			105
-	DstBlock		"Display11"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			104
-	Points			[0, 70]
+	ZOrder			393
+	Points			[0, 55]
 	Branch {
-	  ZOrder		  112
-	  Points		  [0, 420]
-	  DstBlock		  "Primary Heat Exchanger Lumped Model #1"
-	  DstPort		  4
-	}
-	Branch {
-	  ZOrder		  109
+	  ZOrder		  104
+	  Points		  [0, 70]
 	  DstBlock		  "To Workspace2"
 	  DstPort		  1
 	}
+	Branch {
+	  ZOrder		  105
+	  DstBlock		  "Display11"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			392
+	DstBlock		"Tossim Up1"
+	DstPort			1
       }
     }
     Line {
@@ -4100,6 +4528,49 @@ Model {
       DstBlock		      "To Workspace6"
       DstPort		      1
     }
+    Line {
+      ZOrder		      394
+      SrcBlock		      "Tossim Up1"
+      SrcPort		      1
+      DstBlock		      "Delayed Data Up2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      395
+      SrcBlock		      "Tossim Up1"
+      SrcPort		      2
+      DstBlock		      "Delayed Data Up2"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      396
+      SrcBlock		      "Tossim Up1"
+      SrcPort		      3
+      DstBlock		      "Delayed Data Up2"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      397
+      SrcBlock		      "Delayed Data Up2"
+      SrcPort		      1
+      DstBlock		      "Variable Delay Block1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      398
+      SrcBlock		      "Delayed Data Up2"
+      SrcPort		      2
+      DstBlock		      "Variable Delay Block1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      399
+      SrcBlock		      "Variable Delay Block1"
+      SrcPort		      1
+      Points		      [-12, 0; 0, 540]
+      DstBlock		      "Primary Heat Exchanger Lumped Model #1"
+      DstPort		      4
+    }
   }
 }
 #Finite State Machines
@@ -4113,7 +4584,9 @@ Stateflow {
     name		    "HeatExchanger"
     created		    "23-Jul-2013 15:36:43"
     isLibrary		    0
-    firstTarget		    33
+    firstTarget		    55
+    debug {
+    }
     sfVersion		    76014001.002
   }
   chart {
@@ -4126,7 +4599,10 @@ Stateflow {
     firstTransition	    11
     firstJunction	    10
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -4158,21 +4634,21 @@ Stateflow {
       "ml.extrinsic('python');\neml.extrinsic('num2str');\neml.extrinsic('str2num');\neml.extrinsic('delay_summary');\n"
       "eml.extrinsic('disp');\n%eml.extrinsic('ps_aggregation');\neml.extrinsic('ps_text');\neml.extrinsic('for');\neml"
       ".extrinsic('end');\neml.extrinsic('fgets');\neml.extrinsic('fopen');\n\nif isempty(i)\n    i = 0;\n    \n    % r"
-      "ead \"network_error_delay.txt\" file\n    network_array= zeros(iterations, 6);\n    text = fopen('noErrornoDelay"
-      ".txt');\n\n    result = fgets(text);\n    %disp(result);\n\n    %network_array(1, :) = str2num(result);\n    lin"
-      "e_num=1;\n    while ischar(result)\n        if( line_num <=iterations)\n            network_array(line_num, :) ="
-      " str2num(result);\n            result = fgets(text);\n        else\n            break;\n        end\n\n        l"
-      "ine_num = line_num+1;\n\n    end\n    fclose(text);\n    %disp(network_array);\nend\n\n%sen_num=structure.sen_nu"
-      "m;\n\nysensor_value = [0 0 0]'; \nynetwork_delay = [0 0 0]';\n\n\n\n%call_count = 56; % number of slots + 1 (i.e"
-      "., number of client calls made + 1) per TDMA schedule, +1 to have full 53 slots after %\n\n%[resultz] = ps_aggre"
-      "gation(call_count);\ni = i + 1;\n%[resultz] = ps_text(i);\nresultz=network_array(i, :);\n\n%end_to_end_delivery_"
-      "result_aggregated = sum(resultz);\n%end_to_end_delivery_result_aggregated=resultz;\n\n[sensor_value_tmp] = value"
-      "_summary(resultz);\nysensor_value = sensor_value_tmp';\n\n[network_delay_tmp] = network_delay_summary(resultz);\n"
-      "%disp(network_delay)\nynetwork_delay=network_delay_tmp';\n\ndisp('sensor_value')\ndisp(ysensor_value')\n%disp('n"
-      "etwork delay')\n%disp(ynetwork_delay')\ndisp('------------i------------')\ndisp(i)\n\n%last_emergency_instance ="
-      " ymea';\nsensor_value = ysensor_value;\n\n\nactual_value1 = [0 0 0]'; %3 sensors\nactual_value1 = actual_value;\n"
-      "\n\nfor h_yg = 1:3\n    ydelay_global(h_yg, 1) = ysensor_value(h_yg, 1);\nend\n\ndisp('Plant 1, TOSSIM Uplink Bl"
-      "ock, is called');\ncounter_global = counter_global + 1;"
+      "ead \"network_error_delay.txt\" file\n    network_array= zeros(iterations, 6);\n    text = fopen('nonConsecutive"
+      "Lost0.5.txt');\n\n    result = fgets(text);\n    %disp(result);\n\n    %network_array(1, :) = str2num(result);\n"
+      "    line_num=1;\n    while ischar(result)\n        if( line_num <=iterations)\n            network_array(line_nu"
+      "m, :) = str2num(result);\n            result = fgets(text);\n        else\n            break;\n        end\n\n  "
+      "      line_num = line_num+1;\n\n    end\n    fclose(text);\n    %disp(network_array);\nend\n\n%sen_num=structure"
+      ".sen_num;\n\nysensor_value = [0 0 0]'; \nynetwork_delay = [0 0 0]';\n\n\n\n%call_count = 56; % number of slots +"
+      " 1 (i.e., number of client calls made + 1) per TDMA schedule, +1 to have full 53 slots after %\n\n%[resultz] = p"
+      "s_aggregation(call_count);\ni = i + 1;\n%[resultz] = ps_text(i);\nresultz=network_array(i, :);\n\n%end_to_end_de"
+      "livery_result_aggregated = sum(resultz);\n%end_to_end_delivery_result_aggregated=resultz;\n\n[sensor_value_tmp] "
+      "= value_summary(resultz);\nysensor_value = sensor_value_tmp';\n\n[network_delay_tmp] = network_delay_summary(res"
+      "ultz);\n%disp(network_delay)\nynetwork_delay=network_delay_tmp';\n\n%disp('sensor_value')\n%disp(ysensor_value')"
+      "\n%disp('network delay')\n%disp(ynetwork_delay')\n%disp('------------i------------')\n%disp(i)\n\n%last_emergenc"
+      "y_instance = ymea';\nsensor_value = ysensor_value;\n\n\nactual_value1 = [0 0 0]'; %3 sensors\nactual_value1 = ac"
+      "tual_value;\n\n\nfor h_yg = 1:3\n    ydelay_global(h_yg, 1) = ysensor_value(h_yg, 1);\nend\n\ndisp('Heat exchang"
+      "er 1, TOSSIM Uplink Block, is called');\ncounter_global = counter_global + 1;"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -4736,8 +5212,474 @@ Stateflow {
     machine		    1
     chart		    22
   }
-  target {
+  chart {
     id			    33
+    name		    "Tossim Up1"
+    windowPosition	    [370 301 161 328]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1440 900 1.001577287066246]
+    treeNode		    [0 34 0 0]
+    firstTransition	    42
+    firstJunction	    41
+    viewObj		    33
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    13
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    35
+    chartFileNumber	    4
+    disableImplicitCasting  1
+    eml {
+      name		      "Tossim_block"
+    }
+  }
+  state {
+    id			    34
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    33
+    treeNode		    [33 0 0 0]
+    superState		    SUBCHART
+    subviewer		    33
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [control_actual_value1, control_ysensor_value, control_ynetwork_delay]  = Tossim_block(c"
+      "ontrol_actual_value)\n\n% Inputs:\n% ymea: measurement from structure\n\n% Outputs:\n% ymea1: measurement output"
+      "\n% ydelay: delay traces\n\npersistent sensor_value % delay trace\npersistent i  \npersistent network_array\n% c"
+      "ount\nglobal ydelay_global\nglobal counter_global\n\niterations = 3001;\n\n% allow these matlab functions to be "
+      "used in Embedded Matlab block\neml.extrinsic('python');\neml.extrinsic('num2str');\neml.extrinsic('str2num');\ne"
+      "ml.extrinsic('delay_summary');\neml.extrinsic('disp');\n%eml.extrinsic('ps_aggregation');\neml.extrinsic('ps_tex"
+      "t');\neml.extrinsic('for');\neml.extrinsic('end');\neml.extrinsic('fgets');\neml.extrinsic('fopen');\n\nif isemp"
+      "ty(i)\n    i = 0;\n    \n    % read \"network_error_delay.txt\" file\n    network_array= zeros(iterations, 2);\n"
+      "    text = fopen('control_action_nonConsecutive.txt');\n\n    result = fgets(text);\n    %disp(result);\n\n    %"
+      "network_array(1, :) = str2num(result);\n    line_num=1;\n    while ischar(result)\n        if( line_num <=iterat"
+      "ions)\n            network_array(line_num, :) = str2num(result);\n            result = fgets(text);\n        els"
+      "e\n            break;\n        end\n\n        line_num = line_num+1;\n\n    end\n    fclose(text);\n    %disp(ne"
+      "twork_array);\nend\n\n%sen_num=structure.sen_num;\n\nysensor_value = [0]'; \ncontrol_ynetwork_delay = [0]';\n\n\n"
+      "\n%call_count = 56; % number of slots + 1 (i.e., number of client calls made + 1) per TDMA schedule, +1 to have "
+      "full 53 slots after %\n\n%[resultz] = ps_aggregation(call_count);\ni = i + 1;\n%[resultz] = ps_text(i);\nresultz"
+      "=network_array(i, :);\n\n%end_to_end_delivery_result_aggregated = sum(resultz);\n%end_to_end_delivery_result_agg"
+      "regated=resultz;\n\n[sensor_value_tmp] = control_value_summary(resultz);\ncontrol_ysensor_value = sensor_value_t"
+      "mp';\n\n[network_delay_tmp] = control_network_delay_summary(resultz);\n%disp(network_delay)\ncontrol_ynetwork_de"
+      "lay=network_delay_tmp';\n\n%disp('sensor_value')\n%disp(control_ysensor_value')\n%disp('network delay')\n%disp(y"
+      "network_delay')\n%disp('------------i------------')\n%disp(i)\n\n%last_emergency_instance = ymea';\nsensor_value"
+      " = control_ysensor_value;\n\n\ncontrol_actual_value1 = [0]'; %3 sensors\ncontrol_actual_value1 = control_actual_"
+      "value;\n\n\nfor h_yg = 1:1\n    ydelay_global(h_yg, 1) = control_ysensor_value(h_yg, 1);\nend\n\ndisp('Heat exch"
+      "anger 1, TOSSIM Downlink Block, is called');\ncounter_global = counter_global + 1;"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    35
+    ssIdNumber		    7
+    name		    "control_actual_value1"
+    linkNode		    [33 0 36]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    36
+    ssIdNumber		    4
+    name		    "control_actual_value"
+    linkNode		    [33 35 37]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    37
+    ssIdNumber		    5
+    name		    "control_ysensor_value"
+    linkNode		    [33 36 38]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    38
+    ssIdNumber		    9
+    name		    "ydelay_global"
+    linkNode		    [33 37 39]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    39
+    ssIdNumber		    11
+    name		    "counter_global"
+    linkNode		    [33 38 40]
+    scope		    DATA_STORE_MEMORY_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    40
+    ssIdNumber		    13
+    name		    "control_ynetwork_delay"
+    linkNode		    [33 39 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    41
+    position		    [23.5747 49.5747 7]
+    chart		    33
+    linkNode		    [33 0 0]
+    subviewer		    33
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    42
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      41
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    33
+    linkNode		    [33 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    33
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    43
+    name		    "Tossim Up1"
+    machine		    1
+    chart		    33
+  }
+  chart {
+    id			    44
+    name		    "Delayed Data Up2"
+    windowPosition	    [370 301 161 328]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1440 900 1.001577287066246]
+    treeNode		    [0 45 0 0]
+    firstTransition	    53
+    firstJunction	    52
+    viewObj		    44
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    15
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    46
+    chartFileNumber	    5
+    disableImplicitCasting  1
+    eml {
+      name		      "delay_block"
+    }
+  }
+  state {
+    id			    45
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    44
+    treeNode		    [44 0 0 0]
+    superState		    SUBCHART
+    subviewer		    44
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [control_signal_vector, control_delay_vector] = delay_block(control_yactual_value,contro"
+      "l_ysensor_value, control_ynetwork_delay, structure)\n\n% Inputs: \n% yactual_value: measurements output\n% yactu"
+      "al_value: sensor value traces\n% ynetwork_delay: delay traces\n% structure: other necessary information \n\n% Ou"
+      "tputs:\n% signal_vector: sensor measurments\n% delay_vector: delay value\npersistent  i yin_d delay_v\npersisten"
+      "t yin sensor_value num ynd_tmp\npersistent last_senReading last_senDelay\n%global yin_all ynd_all\n\neml.extrins"
+      "ic('disp');\neml.extrinsic('putvar');\n\n\n\n% sennum=5;  %number of the sensors\n%step_count = 1000; %step_coun"
+      "t\n%sen_num=9;\n% initialize parameters\nif isempty(yin)\n    i = structure.i;\n    yin = structure.yin;    \n  "
+      "  ynd_tmp= structure.ynd_tmp;\n\n    yin_d = structure.yin_d; \n    delay_v = structure.delay_v;\n    \n    last"
+      "_senReading = zeros(1,1);\n    last_senDelay = zeros(1,1);\n    \n    %yin_all = structure.yin_all; %zeros (step"
+      " count, sensor number)\n    %ynd_all=structure.ynd_all;\n    \n    %yin_all = zeros(step_count+1,9); %zeros (ste"
+      "p count, sensor number)\n    %ynd_all=zeros(step_count+1,9);\n    \n    sensor_value = zeros(1,1);         %init"
+      "ialized\n    sensor_value = control_ysensor_value';\n    num = 0;\nend\n\n%yin_all = zeros(step_count+1,9); %zer"
+      "os (step count, sensor number)\n%ynd_all=zeros(step_count+1,9);\n\nsensor_reading=[0 0 0];\nsensor_delay=[0 0 0]"
+      ";\nnum = num+1;   \n\n%get delay information \n% delay=zeros(1,10+1); \nsensor_value=control_ysensor_value';\n  "
+      "  \n\n%get value from \"yactual_value\" input\nif num == 1\n    for kk = 1:1\n        last_senReading(kk) = cont"
+      "rol_yactual_value(kk); %offset=5\n        last_senDelay(kk) = control_ynetwork_delay(kk);\n    end \nend\n%gener"
+      "ate output value according to delay    \nfor j=1:1\n    if sensor_value(1,j)~=88\n        last_senReading(j) = c"
+      "ontrol_yactual_value(j);\n        last_senDelay(j) = control_ynetwork_delay(j);\n        %yin(j) = last_senReadi"
+      "ng(j);  %packet receive\n        %ynd_tmp(j)=last_senDelay(j);\n        \n    else\n        if num>1 \n         "
+      "    %yin(j)=last_senReading(j); %if lost, set it to previous value\n             last_senReading(j)=last_senRead"
+      "ing(j);\n             %ynd_tmp(j)=last_senDelay(j)+0.1;\n             last_senDelay(j)=last_senDelay(j)+0.1;\n  "
+      "      end        \n    end\nend\n\navg_delay=0.0;\n\nfor kk = 1:1\n    %sensor_reading(kk)= yin_all(num,kk); %of"
+      "fset=5\n    %sensor_delay(kk) = ynd_all(num,kk);\n    avg_delay =last_senDelay(kk)+avg_delay;\n\nend\n\navg_dela"
+      "y = avg_delay/1.0;\nfileID = fopen('control_sensor_data.txt','a');\nfprintf(fileID, '%f\\n', avg_delay);\nfclose"
+      "(fileID);\n\n%putvar(yin_all, ynd_all);\n\n%structure.yin_all=yin_all;\n%structure.ynd_all=ynd_all;\n\n%yin_d = "
+      "yin';\n%delay_v = ynd_tmp';\n%delay_v = ynd_tmp'/3;\n%delay_v = [0,0,0]';\n\ncontrol_signal_vector = last_senRea"
+      "ding';\n\ncontrol_delay_vector = last_senDelay';\n\ndisp('actual value')\ndisp(control_yactual_value);\n\ndisp('"
+      "converted sensor_value')\ndisp(control_signal_vector')\ndisp('converted network delay')\ndisp(control_delay_vect"
+      "or')\ndisp('---------------num-------------')\ndisp(num)\n\n% disp('plant2');\n\n% yout_delay'\ni = i+1;\n\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    46
+    ssIdNumber		    4
+    name		    "control_yactual_value"
+    linkNode		    [44 0 47]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    47
+    ssIdNumber		    12
+    name		    "control_ysensor_value"
+    linkNode		    [44 46 48]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    48
+    ssIdNumber		    15
+    name		    "control_ynetwork_delay"
+    linkNode		    [44 47 49]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    49
+    ssIdNumber		    5
+    name		    "control_signal_vector"
+    linkNode		    [44 48 50]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    50
+    ssIdNumber		    9
+    name		    "structure"
+    linkNode		    [44 49 51]
+    scope		    PARAMETER_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    51
+    ssIdNumber		    14
+    name		    "control_delay_vector"
+    linkNode		    [44 50 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    52
+    position		    [23.5747 49.5747 7]
+    chart		    44
+    linkNode		    [44 0 0]
+    subviewer		    44
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    53
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      52
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    44
+    linkNode		    [44 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    44
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    54
+    name		    "Delayed Data Up2"
+    machine		    1
+    chart		    44
+  }
+  target {
+    id			    55
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1

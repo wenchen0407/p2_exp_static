@@ -430,10 +430,10 @@ static void c1_chartstep_c1_HeatExchanger(SFc1_HeatExchangerInstanceStruct
   real_T c1_ynetwork_delay[3];
   int32_T c1_i15;
   int32_T c1_i16;
-  static char_T c1_cv0[18] = { 'n', 'o', 'E', 'r', 'r', 'o', 'r', 'n', 'o', 'D',
-    'e', 'l', 'a', 'y', '.', 't', 'x', 't' };
+  static char_T c1_cv0[25] = { 'n', 'o', 'n', 'C', 'o', 'n', 's', 'e', 'c', 'u',
+    't', 'i', 'v', 'e', 'L', 'o', 's', 't', '0', '.', '5', '.', 't', 'x', 't' };
 
-  char_T c1_u[18];
+  char_T c1_u[25];
   const mxArray *c1_y = NULL;
   real_T c1_dv5[6];
   int32_T c1_b_line_num;
@@ -468,40 +468,23 @@ static void c1_chartstep_c1_HeatExchanger(SFc1_HeatExchangerInstanceStruct
   int32_T c1_d_i_rn;
   int32_T c1_i31;
   int32_T c1_i32;
-  static char_T c1_cv1[12] = { 's', 'e', 'n', 's', 'o', 'r', '_', 'v', 'a', 'l',
-    'u', 'e' };
-
-  char_T c1_b_u[12];
-  const mxArray *c1_b_y = NULL;
   int32_T c1_i33;
-  real_T c1_c_u[3];
-  const mxArray *c1_c_y = NULL;
   int32_T c1_i34;
-  static char_T c1_cv2[25] = { '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
-    '-', '-', 'i', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-' };
-
-  char_T c1_d_u[25];
-  const mxArray *c1_d_y = NULL;
-  real_T c1_hoistedGlobal;
-  real_T c1_e_u;
-  const mxArray *c1_e_y = NULL;
-  int32_T c1_i35;
-  int32_T c1_i36;
-  int32_T c1_i37;
   int32_T c1_b_h_yg;
   real_T c1_d0;
+  int32_T c1_i35;
+  int32_T c1_i36;
+  static char_T c1_cv1[48] = { 'H', 'e', 'a', 't', ' ', 'e', 'x', 'c', 'h', 'a',
+    'n', 'g', 'e', 'r', ' ', '1', ',', ' ', 'T', 'O', 'S', 'S', 'I', 'M', ' ',
+    'U', 'p', 'l', 'i', 'n', 'k', ' ', 'B', 'l', 'o', 'c', 'k', ',', ' ', 'i',
+    's', ' ', 'c', 'a', 'l', 'l', 'e', 'd' };
+
+  char_T c1_b_u[48];
+  const mxArray *c1_b_y = NULL;
+  int64_T c1_i37;
   int32_T c1_i38;
   int32_T c1_i39;
-  static char_T c1_cv3[39] = { 'P', 'l', 'a', 'n', 't', ' ', '1', ',', ' ', 'T',
-    'O', 'S', 'S', 'I', 'M', ' ', 'U', 'p', 'l', 'i', 'n', 'k', ' ', 'B', 'l',
-    'o', 'c', 'k', ',', ' ', 'i', 's', ' ', 'c', 'a', 'l', 'l', 'e', 'd' };
-
-  char_T c1_f_u[39];
-  const mxArray *c1_f_y = NULL;
-  int64_T c1_i40;
-  int32_T c1_i41;
-  int32_T c1_i42;
-  int32_T c1_i43;
+  int32_T c1_i40;
   real_T (*c1_b_actual_value1)[3];
   real_T (*c1_b_ysensor_value)[3];
   real_T (*c1_b_ynetwork_delay)[3];
@@ -578,12 +561,12 @@ static void c1_chartstep_c1_HeatExchanger(SFc1_HeatExchangerInstanceStruct
 
     chartInstance->c1_network_array_not_empty = true;
     _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 37);
-    for (c1_i16 = 0; c1_i16 < 18; c1_i16++) {
+    for (c1_i16 = 0; c1_i16 < 25; c1_i16++) {
       c1_u[c1_i16] = c1_cv0[c1_i16];
     }
 
     c1_y = NULL;
-    sf_mex_assign(&c1_y, sf_mex_create("y", c1_u, 10, 0U, 1U, 0U, 2, 1, 18),
+    sf_mex_assign(&c1_y, sf_mex_create("y", c1_u, 10, 0U, 1U, 0U, 2, 1, 25),
                   false);
     sf_mex_assign(&c1_text, sf_mex_call_debug(sfGlobalDebugInstanceStruct,
       "fopen", 1U, 1U, 14, c1_y), false);
@@ -799,53 +782,20 @@ static void c1_chartstep_c1_HeatExchanger(SFc1_HeatExchangerInstanceStruct
     c1_ynetwork_delay[c1_i31] = c1_network_delay_tmp[c1_i31];
   }
 
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 83);
-  for (c1_i32 = 0; c1_i32 < 12; c1_i32++) {
-    c1_b_u[c1_i32] = c1_cv1[c1_i32];
-  }
-
-  c1_b_y = NULL;
-  sf_mex_assign(&c1_b_y, sf_mex_create("y", c1_b_u, 10, 0U, 1U, 0U, 2, 1, 12),
-                false);
-  sf_mex_call_debug(sfGlobalDebugInstanceStruct, "disp", 0U, 1U, 14, c1_b_y);
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 84);
-  for (c1_i33 = 0; c1_i33 < 3; c1_i33++) {
-    c1_c_u[c1_i33] = c1_ysensor_value[c1_i33];
-  }
-
-  c1_c_y = NULL;
-  sf_mex_assign(&c1_c_y, sf_mex_create("y", c1_c_u, 0, 0U, 1U, 0U, 2, 1, 3),
-                false);
-  sf_mex_call_debug(sfGlobalDebugInstanceStruct, "disp", 0U, 1U, 14, c1_c_y);
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 87);
-  for (c1_i34 = 0; c1_i34 < 25; c1_i34++) {
-    c1_d_u[c1_i34] = c1_cv2[c1_i34];
-  }
-
-  c1_d_y = NULL;
-  sf_mex_assign(&c1_d_y, sf_mex_create("y", c1_d_u, 10, 0U, 1U, 0U, 2, 1, 25),
-                false);
-  sf_mex_call_debug(sfGlobalDebugInstanceStruct, "disp", 0U, 1U, 14, c1_d_y);
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 88);
-  c1_hoistedGlobal = chartInstance->c1_i;
-  c1_e_u = c1_hoistedGlobal;
-  c1_e_y = NULL;
-  sf_mex_assign(&c1_e_y, sf_mex_create("y", &c1_e_u, 0, 0U, 0U, 0U, 0), false);
-  sf_mex_call_debug(sfGlobalDebugInstanceStruct, "disp", 0U, 1U, 14, c1_e_y);
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 91);
-  for (c1_i35 = 0; c1_i35 < 3; c1_i35++) {
-    chartInstance->c1_sensor_value[c1_i35] = c1_ysensor_value[c1_i35];
+  for (c1_i32 = 0; c1_i32 < 3; c1_i32++) {
+    chartInstance->c1_sensor_value[c1_i32] = c1_ysensor_value[c1_i32];
   }
 
   chartInstance->c1_sensor_value_not_empty = true;
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 94);
-  for (c1_i36 = 0; c1_i36 < 3; c1_i36++) {
-    c1_actual_value1[c1_i36] = 0.0;
+  for (c1_i33 = 0; c1_i33 < 3; c1_i33++) {
+    c1_actual_value1[c1_i33] = 0.0;
   }
 
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 95);
-  for (c1_i37 = 0; c1_i37 < 3; c1_i37++) {
-    c1_actual_value1[c1_i37] = c1_actual_value[c1_i37];
+  for (c1_i34 = 0; c1_i34 < 3; c1_i34++) {
+    c1_actual_value1[c1_i34] = c1_actual_value[c1_i34];
   }
 
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 98);
@@ -860,19 +810,19 @@ static void c1_chartstep_c1_HeatExchanger(SFc1_HeatExchangerInstanceStruct
       - 1]);
     if (c1_d0 < 2.147483648E+9) {
       if (CV_SATURATION_EVAL(4, 0, 0, 1, c1_d0 >= -2.147483648E+9)) {
-        c1_i38 = (int32_T)c1_d0;
+        c1_i35 = (int32_T)c1_d0;
       } else {
-        c1_i38 = MIN_int32_T;
+        c1_i35 = MIN_int32_T;
       }
     } else if (CV_SATURATION_EVAL(4, 0, 0, 0, c1_d0 >= 2.147483648E+9)) {
-      c1_i38 = MAX_int32_T;
+      c1_i35 = MAX_int32_T;
     } else {
-      c1_i38 = 0;
+      c1_i35 = 0;
     }
 
     c1_set_ydelay_global(chartInstance, _SFD_EML_ARRAY_BOUNDS_CHECK(
       "ydelay_global", (int32_T)_SFD_INTEGER_CHECK("h_yg", c1_h_yg), 1, 10, 1, 0)
-                         - 1, c1_i38);
+                         - 1, c1_i35);
     ssUpdateDataStoreLog(chartInstance->S, 1);
     c1_b_h_yg++;
     _SF_MEX_LISTEN_FOR_CTRL_C(chartInstance->S);
@@ -880,41 +830,41 @@ static void c1_chartstep_c1_HeatExchanger(SFc1_HeatExchangerInstanceStruct
 
   CV_EML_FOR(0, 1, 0, 0);
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 102);
-  for (c1_i39 = 0; c1_i39 < 39; c1_i39++) {
-    c1_f_u[c1_i39] = c1_cv3[c1_i39];
+  for (c1_i36 = 0; c1_i36 < 48; c1_i36++) {
+    c1_b_u[c1_i36] = c1_cv1[c1_i36];
   }
 
-  c1_f_y = NULL;
-  sf_mex_assign(&c1_f_y, sf_mex_create("y", c1_f_u, 10, 0U, 1U, 0U, 2, 1, 39),
+  c1_b_y = NULL;
+  sf_mex_assign(&c1_b_y, sf_mex_create("y", c1_b_u, 10, 0U, 1U, 0U, 2, 1, 48),
                 false);
-  sf_mex_call_debug(sfGlobalDebugInstanceStruct, "disp", 0U, 1U, 14, c1_f_y);
+  sf_mex_call_debug(sfGlobalDebugInstanceStruct, "disp", 0U, 1U, 14, c1_b_y);
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 103);
-  c1_i40 = (int64_T)c1_get_counter_global(chartInstance, 0) + 1L;
-  if (c1_i40 > 2147483647L) {
+  c1_i37 = (int64_T)c1_get_counter_global(chartInstance, 0) + 1L;
+  if (c1_i37 > 2147483647L) {
     CV_SATURATION_EVAL(4, 0, 1, 0, 1);
-    c1_i40 = 2147483647L;
+    c1_i37 = 2147483647L;
   } else {
-    if (CV_SATURATION_EVAL(4, 0, 1, 0, c1_i40 < -2147483648L)) {
-      c1_i40 = -2147483648L;
+    if (CV_SATURATION_EVAL(4, 0, 1, 0, c1_i37 < -2147483648L)) {
+      c1_i37 = -2147483648L;
     }
   }
 
-  c1_set_counter_global(chartInstance, 0, (int32_T)c1_i40);
+  c1_set_counter_global(chartInstance, 0, (int32_T)c1_i37);
   ssUpdateDataStoreLog(chartInstance->S, 0);
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, -103);
   _SFD_SYMBOL_SCOPE_POP();
   sf_mex_destroy(&c1_text);
   sf_mex_destroy(&c1_result);
-  for (c1_i41 = 0; c1_i41 < 3; c1_i41++) {
-    (*c1_b_actual_value1)[c1_i41] = c1_actual_value1[c1_i41];
+  for (c1_i38 = 0; c1_i38 < 3; c1_i38++) {
+    (*c1_b_actual_value1)[c1_i38] = c1_actual_value1[c1_i38];
   }
 
-  for (c1_i42 = 0; c1_i42 < 3; c1_i42++) {
-    (*c1_b_ysensor_value)[c1_i42] = c1_ysensor_value[c1_i42];
+  for (c1_i39 = 0; c1_i39 < 3; c1_i39++) {
+    (*c1_b_ysensor_value)[c1_i39] = c1_ysensor_value[c1_i39];
   }
 
-  for (c1_i43 = 0; c1_i43 < 3; c1_i43++) {
-    (*c1_b_ynetwork_delay)[c1_i43] = c1_ynetwork_delay[c1_i43];
+  for (c1_i40 = 0; c1_i40 < 3; c1_i40++) {
+    (*c1_b_ynetwork_delay)[c1_i40] = c1_ynetwork_delay[c1_i40];
   }
 
   _SFD_CC_CALL(EXIT_OUT_OF_FUNCTION_TAG, 0U, chartInstance->c1_sfEvent);
@@ -932,10 +882,10 @@ static void init_script_number_translation(uint32_T c1_machineNumber, uint32_T
   (void)c1_machineNumber;
   _SFD_SCRIPT_TRANSLATION(c1_chartNumber, c1_instanceNumber, 0U,
     sf_debug_get_script_id(
-    "/Users/wangwenchen/wcps_apps/stepF_HX/value_summary.m"));
+    "/Users/wangwenchen/github/paper2_experiment/value_summary.m"));
   _SFD_SCRIPT_TRANSLATION(c1_chartNumber, c1_instanceNumber, 1U,
     sf_debug_get_script_id(
-    "/Users/wangwenchen/wcps_apps/stepF_HX/network_delay_summary.m"));
+    "/Users/wangwenchen/github/paper2_experiment/network_delay_summary.m"));
 }
 
 static boolean_T c1_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
@@ -978,11 +928,11 @@ static void c1_d_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   real_T c1_y[6])
 {
   real_T c1_dv6[6];
-  int32_T c1_i44;
+  int32_T c1_i41;
   (void)chartInstance;
   sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_dv6, 0, 0, 0U, 1, 0U, 2, 1, 6);
-  for (c1_i44 = 0; c1_i44 < 6; c1_i44++) {
-    c1_y[c1_i44] = c1_dv6[c1_i44];
+  for (c1_i41 = 0; c1_i41 < 6; c1_i41++) {
+    c1_y[c1_i41] = c1_dv6[c1_i41];
   }
 
   sf_mex_destroy(&c1_u);
@@ -991,35 +941,35 @@ static void c1_d_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
 static const mxArray *c1_sf_marshallOut(void *chartInstanceVoid, void *c1_inData)
 {
   const mxArray *c1_mxArrayOutData = NULL;
+  int32_T c1_i42;
+  int32_T c1_i43;
+  int32_T c1_i44;
+  static real_T c1_b_inData[18006];
   int32_T c1_i45;
   int32_T c1_i46;
   int32_T c1_i47;
-  static real_T c1_b_inData[18006];
-  int32_T c1_i48;
-  int32_T c1_i49;
-  int32_T c1_i50;
   real_T c1_u[18006];
   const mxArray *c1_y = NULL;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_mxArrayOutData = NULL;
+  c1_i42 = 0;
+  for (c1_i43 = 0; c1_i43 < 6; c1_i43++) {
+    for (c1_i44 = 0; c1_i44 < 3001; c1_i44++) {
+      c1_b_inData[c1_i44 + c1_i42] = (*(real_T (*)[18006])c1_inData)[c1_i44 +
+        c1_i42];
+    }
+
+    c1_i42 += 3001;
+  }
+
   c1_i45 = 0;
   for (c1_i46 = 0; c1_i46 < 6; c1_i46++) {
     for (c1_i47 = 0; c1_i47 < 3001; c1_i47++) {
-      c1_b_inData[c1_i47 + c1_i45] = (*(real_T (*)[18006])c1_inData)[c1_i47 +
-        c1_i45];
+      c1_u[c1_i47 + c1_i45] = c1_b_inData[c1_i47 + c1_i45];
     }
 
     c1_i45 += 3001;
-  }
-
-  c1_i48 = 0;
-  for (c1_i49 = 0; c1_i49 < 6; c1_i49++) {
-    for (c1_i50 = 0; c1_i50 < 3001; c1_i50++) {
-      c1_u[c1_i50 + c1_i48] = c1_b_inData[c1_i50 + c1_i48];
-    }
-
-    c1_i48 += 3001;
   }
 
   c1_y = NULL;
@@ -1051,15 +1001,15 @@ static void c1_f_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   real_T c1_y[18006])
 {
   real_T c1_dv7[18006];
-  int32_T c1_i51;
+  int32_T c1_i48;
   if (mxIsEmpty(c1_u)) {
     chartInstance->c1_network_array_not_empty = false;
   } else {
     chartInstance->c1_network_array_not_empty = true;
     sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_dv7, 1, 0, 0U, 1, 0U, 2,
                   3001, 6);
-    for (c1_i51 = 0; c1_i51 < 18006; c1_i51++) {
-      c1_y[c1_i51] = c1_dv7[c1_i51];
+    for (c1_i48 = 0; c1_i48 < 18006; c1_i48++) {
+      c1_y[c1_i48] = c1_dv7[c1_i48];
     }
   }
 
@@ -1073,9 +1023,9 @@ static void c1_sf_marshallIn(void *chartInstanceVoid, const mxArray
   const char_T *c1_identifier;
   emlrtMsgIdentifier c1_thisId;
   static real_T c1_y[18006];
-  int32_T c1_i52;
-  int32_T c1_i53;
-  int32_T c1_i54;
+  int32_T c1_i49;
+  int32_T c1_i50;
+  int32_T c1_i51;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_b_network_array = sf_mex_dup(c1_mxArrayInData);
@@ -1085,13 +1035,13 @@ static void c1_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c1_f_emlrt_marshallIn(chartInstance, sf_mex_dup(c1_b_network_array),
                         &c1_thisId, c1_y);
   sf_mex_destroy(&c1_b_network_array);
-  c1_i52 = 0;
-  for (c1_i53 = 0; c1_i53 < 6; c1_i53++) {
-    for (c1_i54 = 0; c1_i54 < 3001; c1_i54++) {
-      (*(real_T (*)[18006])c1_outData)[c1_i54 + c1_i52] = c1_y[c1_i54 + c1_i52];
+  c1_i49 = 0;
+  for (c1_i50 = 0; c1_i50 < 6; c1_i50++) {
+    for (c1_i51 = 0; c1_i51 < 3001; c1_i51++) {
+      (*(real_T (*)[18006])c1_outData)[c1_i51 + c1_i49] = c1_y[c1_i51 + c1_i49];
     }
 
-    c1_i52 += 3001;
+    c1_i49 += 3001;
   }
 
   sf_mex_destroy(&c1_mxArrayInData);
@@ -1170,20 +1120,20 @@ static const mxArray *c1_c_sf_marshallOut(void *chartInstanceVoid, void
   *c1_inData)
 {
   const mxArray *c1_mxArrayOutData = NULL;
-  int32_T c1_i55;
+  int32_T c1_i52;
   real_T c1_b_inData[3];
-  int32_T c1_i56;
+  int32_T c1_i53;
   real_T c1_u[3];
   const mxArray *c1_y = NULL;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_mxArrayOutData = NULL;
-  for (c1_i55 = 0; c1_i55 < 3; c1_i55++) {
-    c1_b_inData[c1_i55] = (*(real_T (*)[3])c1_inData)[c1_i55];
+  for (c1_i52 = 0; c1_i52 < 3; c1_i52++) {
+    c1_b_inData[c1_i52] = (*(real_T (*)[3])c1_inData)[c1_i52];
   }
 
-  for (c1_i56 = 0; c1_i56 < 3; c1_i56++) {
-    c1_u[c1_i56] = c1_b_inData[c1_i56];
+  for (c1_i53 = 0; c1_i53 < 3; c1_i53++) {
+    c1_u[c1_i53] = c1_b_inData[c1_i53];
   }
 
   c1_y = NULL;
@@ -1214,14 +1164,14 @@ static void c1_j_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   real_T c1_y[3])
 {
   real_T c1_dv8[3];
-  int32_T c1_i57;
+  int32_T c1_i54;
   if (mxIsEmpty(c1_u)) {
     chartInstance->c1_sensor_value_not_empty = false;
   } else {
     chartInstance->c1_sensor_value_not_empty = true;
     sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_dv8, 1, 0, 0U, 1, 0U, 1, 3);
-    for (c1_i57 = 0; c1_i57 < 3; c1_i57++) {
-      c1_y[c1_i57] = c1_dv8[c1_i57];
+    for (c1_i54 = 0; c1_i54 < 3; c1_i54++) {
+      c1_y[c1_i54] = c1_dv8[c1_i54];
     }
   }
 
@@ -1235,7 +1185,7 @@ static void c1_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
   const char_T *c1_identifier;
   emlrtMsgIdentifier c1_thisId;
   real_T c1_y[3];
-  int32_T c1_i58;
+  int32_T c1_i55;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_b_sensor_value = sf_mex_dup(c1_mxArrayInData);
@@ -1245,8 +1195,8 @@ static void c1_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c1_j_emlrt_marshallIn(chartInstance, sf_mex_dup(c1_b_sensor_value), &c1_thisId,
                         c1_y);
   sf_mex_destroy(&c1_b_sensor_value);
-  for (c1_i58 = 0; c1_i58 < 3; c1_i58++) {
-    (*(real_T (*)[3])c1_outData)[c1_i58] = c1_y[c1_i58];
+  for (c1_i55 = 0; c1_i55 < 3; c1_i55++) {
+    (*(real_T (*)[3])c1_outData)[c1_i55] = c1_y[c1_i55];
   }
 
   sf_mex_destroy(&c1_mxArrayInData);
@@ -1256,20 +1206,20 @@ static const mxArray *c1_d_sf_marshallOut(void *chartInstanceVoid, void
   *c1_inData)
 {
   const mxArray *c1_mxArrayOutData = NULL;
-  int32_T c1_i59;
+  int32_T c1_i56;
   real_T c1_b_inData[3];
-  int32_T c1_i60;
+  int32_T c1_i57;
   real_T c1_u[3];
   const mxArray *c1_y = NULL;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_mxArrayOutData = NULL;
-  for (c1_i59 = 0; c1_i59 < 3; c1_i59++) {
-    c1_b_inData[c1_i59] = (*(real_T (*)[3])c1_inData)[c1_i59];
+  for (c1_i56 = 0; c1_i56 < 3; c1_i56++) {
+    c1_b_inData[c1_i56] = (*(real_T (*)[3])c1_inData)[c1_i56];
   }
 
-  for (c1_i60 = 0; c1_i60 < 3; c1_i60++) {
-    c1_u[c1_i60] = c1_b_inData[c1_i60];
+  for (c1_i57 = 0; c1_i57 < 3; c1_i57++) {
+    c1_u[c1_i57] = c1_b_inData[c1_i57];
   }
 
   c1_y = NULL;
@@ -1295,11 +1245,11 @@ static void c1_l_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   real_T c1_y[3])
 {
   real_T c1_dv9[3];
-  int32_T c1_i61;
+  int32_T c1_i58;
   (void)chartInstance;
   sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_dv9, 1, 0, 0U, 1, 0U, 1, 3);
-  for (c1_i61 = 0; c1_i61 < 3; c1_i61++) {
-    c1_y[c1_i61] = c1_dv9[c1_i61];
+  for (c1_i58 = 0; c1_i58 < 3; c1_i58++) {
+    c1_y[c1_i58] = c1_dv9[c1_i58];
   }
 
   sf_mex_destroy(&c1_u);
@@ -1312,7 +1262,7 @@ static void c1_d_sf_marshallIn(void *chartInstanceVoid, const mxArray
   const char_T *c1_identifier;
   emlrtMsgIdentifier c1_thisId;
   real_T c1_y[3];
-  int32_T c1_i62;
+  int32_T c1_i59;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_ynetwork_delay = sf_mex_dup(c1_mxArrayInData);
@@ -1322,8 +1272,8 @@ static void c1_d_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c1_l_emlrt_marshallIn(chartInstance, sf_mex_dup(c1_ynetwork_delay), &c1_thisId,
                         c1_y);
   sf_mex_destroy(&c1_ynetwork_delay);
-  for (c1_i62 = 0; c1_i62 < 3; c1_i62++) {
-    (*(real_T (*)[3])c1_outData)[c1_i62] = c1_y[c1_i62];
+  for (c1_i59 = 0; c1_i59 < 3; c1_i59++) {
+    (*(real_T (*)[3])c1_outData)[c1_i59] = c1_y[c1_i59];
   }
 
   sf_mex_destroy(&c1_mxArrayInData);
@@ -1380,20 +1330,20 @@ static const mxArray *c1_f_sf_marshallOut(void *chartInstanceVoid, void
   *c1_inData)
 {
   const mxArray *c1_mxArrayOutData = NULL;
-  int32_T c1_i63;
+  int32_T c1_i60;
   real_T c1_b_inData[3];
-  int32_T c1_i64;
+  int32_T c1_i61;
   real_T c1_u[3];
   const mxArray *c1_y = NULL;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_mxArrayOutData = NULL;
-  for (c1_i63 = 0; c1_i63 < 3; c1_i63++) {
-    c1_b_inData[c1_i63] = (*(real_T (*)[3])c1_inData)[c1_i63];
+  for (c1_i60 = 0; c1_i60 < 3; c1_i60++) {
+    c1_b_inData[c1_i60] = (*(real_T (*)[3])c1_inData)[c1_i60];
   }
 
-  for (c1_i64 = 0; c1_i64 < 3; c1_i64++) {
-    c1_u[c1_i64] = c1_b_inData[c1_i64];
+  for (c1_i61 = 0; c1_i61 < 3; c1_i61++) {
+    c1_u[c1_i61] = c1_b_inData[c1_i61];
   }
 
   c1_y = NULL;
@@ -1407,11 +1357,11 @@ static void c1_n_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   real_T c1_y[3])
 {
   real_T c1_dv10[3];
-  int32_T c1_i65;
+  int32_T c1_i62;
   (void)chartInstance;
   sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_dv10, 1, 0, 0U, 1, 0U, 2, 1, 3);
-  for (c1_i65 = 0; c1_i65 < 3; c1_i65++) {
-    c1_y[c1_i65] = c1_dv10[c1_i65];
+  for (c1_i62 = 0; c1_i62 < 3; c1_i62++) {
+    c1_y[c1_i62] = c1_dv10[c1_i62];
   }
 
   sf_mex_destroy(&c1_u);
@@ -1424,7 +1374,7 @@ static void c1_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
   const char_T *c1_identifier;
   emlrtMsgIdentifier c1_thisId;
   real_T c1_y[3];
-  int32_T c1_i66;
+  int32_T c1_i63;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_network_delay_tmp = sf_mex_dup(c1_mxArrayInData);
@@ -1434,8 +1384,8 @@ static void c1_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c1_n_emlrt_marshallIn(chartInstance, sf_mex_dup(c1_network_delay_tmp),
                         &c1_thisId, c1_y);
   sf_mex_destroy(&c1_network_delay_tmp);
-  for (c1_i66 = 0; c1_i66 < 3; c1_i66++) {
-    (*(real_T (*)[3])c1_outData)[c1_i66] = c1_y[c1_i66];
+  for (c1_i63 = 0; c1_i63 < 3; c1_i63++) {
+    (*(real_T (*)[3])c1_outData)[c1_i63] = c1_y[c1_i63];
   }
 
   sf_mex_destroy(&c1_mxArrayInData);
@@ -1445,20 +1395,20 @@ static const mxArray *c1_g_sf_marshallOut(void *chartInstanceVoid, void
   *c1_inData)
 {
   const mxArray *c1_mxArrayOutData = NULL;
-  int32_T c1_i67;
+  int32_T c1_i64;
   real_T c1_b_inData[6];
-  int32_T c1_i68;
+  int32_T c1_i65;
   real_T c1_u[6];
   const mxArray *c1_y = NULL;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_mxArrayOutData = NULL;
-  for (c1_i67 = 0; c1_i67 < 6; c1_i67++) {
-    c1_b_inData[c1_i67] = (*(real_T (*)[6])c1_inData)[c1_i67];
+  for (c1_i64 = 0; c1_i64 < 6; c1_i64++) {
+    c1_b_inData[c1_i64] = (*(real_T (*)[6])c1_inData)[c1_i64];
   }
 
-  for (c1_i68 = 0; c1_i68 < 6; c1_i68++) {
-    c1_u[c1_i68] = c1_b_inData[c1_i68];
+  for (c1_i65 = 0; c1_i65 < 6; c1_i65++) {
+    c1_u[c1_i65] = c1_b_inData[c1_i65];
   }
 
   c1_y = NULL;
@@ -1472,11 +1422,11 @@ static void c1_o_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   real_T c1_y[6])
 {
   real_T c1_dv11[6];
-  int32_T c1_i69;
+  int32_T c1_i66;
   (void)chartInstance;
   sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_dv11, 1, 0, 0U, 1, 0U, 2, 1, 6);
-  for (c1_i69 = 0; c1_i69 < 6; c1_i69++) {
-    c1_y[c1_i69] = c1_dv11[c1_i69];
+  for (c1_i66 = 0; c1_i66 < 6; c1_i66++) {
+    c1_y[c1_i66] = c1_dv11[c1_i66];
   }
 
   sf_mex_destroy(&c1_u);
@@ -1489,7 +1439,7 @@ static void c1_g_sf_marshallIn(void *chartInstanceVoid, const mxArray
   const char_T *c1_identifier;
   emlrtMsgIdentifier c1_thisId;
   real_T c1_y[6];
-  int32_T c1_i70;
+  int32_T c1_i67;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_resultz = sf_mex_dup(c1_mxArrayInData);
@@ -1498,8 +1448,8 @@ static void c1_g_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c1_thisId.fParent = NULL;
   c1_o_emlrt_marshallIn(chartInstance, sf_mex_dup(c1_resultz), &c1_thisId, c1_y);
   sf_mex_destroy(&c1_resultz);
-  for (c1_i70 = 0; c1_i70 < 6; c1_i70++) {
-    (*(real_T (*)[6])c1_outData)[c1_i70] = c1_y[c1_i70];
+  for (c1_i67 = 0; c1_i67 < 6; c1_i67++) {
+    (*(real_T (*)[6])c1_outData)[c1_i67] = c1_y[c1_i67];
   }
 
   sf_mex_destroy(&c1_mxArrayInData);
@@ -1566,8 +1516,8 @@ static void c1_info_helper(const mxArray **c1_info)
   sf_mex_addfield(*c1_info, c1_emlrt_marshallOut("double"), "dominantType",
                   "dominantType", 1);
   sf_mex_addfield(*c1_info, c1_emlrt_marshallOut(
-    "[E]/Users/wangwenchen/wcps_apps/stepF_HX/value_summary.m"), "resolved",
-                  "resolved", 1);
+    "[E]/Users/wangwenchen/github/paper2_experiment/value_summary.m"),
+                  "resolved", "resolved", 1);
   sf_mex_addfield(*c1_info, c1_b_emlrt_marshallOut(1454627813U), "fileTimeLo",
                   "fileTimeLo", 1);
   sf_mex_addfield(*c1_info, c1_b_emlrt_marshallOut(0U), "fileTimeHi",
@@ -1586,7 +1536,7 @@ static void c1_info_helper(const mxArray **c1_info)
   sf_mex_addfield(*c1_info, c1_emlrt_marshallOut("double"), "dominantType",
                   "dominantType", 2);
   sf_mex_addfield(*c1_info, c1_emlrt_marshallOut(
-    "[E]/Users/wangwenchen/wcps_apps/stepF_HX/network_delay_summary.m"),
+    "[E]/Users/wangwenchen/github/paper2_experiment/network_delay_summary.m"),
                   "resolved", "resolved", 2);
   sf_mex_addfield(*c1_info, c1_b_emlrt_marshallOut(1454627777U), "fileTimeLo",
                   "fileTimeLo", 2);
@@ -1645,10 +1595,10 @@ static int32_T c1_p_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   *chartInstance, const mxArray *c1_u, const emlrtMsgIdentifier *c1_parentId)
 {
   int32_T c1_y;
-  int32_T c1_i71;
+  int32_T c1_i68;
   (void)chartInstance;
-  sf_mex_import(c1_parentId, sf_mex_dup(c1_u), &c1_i71, 1, 6, 0U, 0, 0U, 0);
-  c1_y = c1_i71;
+  sf_mex_import(c1_parentId, sf_mex_dup(c1_u), &c1_i68, 1, 6, 0U, 0, 0U, 0);
+  c1_y = c1_i68;
   sf_mex_destroy(&c1_u);
   return c1_y;
 }
@@ -1677,20 +1627,20 @@ static const mxArray *c1_j_sf_marshallOut(void *chartInstanceVoid, void
   *c1_inData)
 {
   const mxArray *c1_mxArrayOutData = NULL;
-  int32_T c1_i72;
+  int32_T c1_i69;
   int32_T c1_b_inData[10];
-  int32_T c1_i73;
+  int32_T c1_i70;
   int32_T c1_u[10];
   const mxArray *c1_y = NULL;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_mxArrayOutData = NULL;
-  for (c1_i72 = 0; c1_i72 < 10; c1_i72++) {
-    c1_b_inData[c1_i72] = (*(int32_T (*)[10])c1_inData)[c1_i72];
+  for (c1_i69 = 0; c1_i69 < 10; c1_i69++) {
+    c1_b_inData[c1_i69] = (*(int32_T (*)[10])c1_inData)[c1_i69];
   }
 
-  for (c1_i73 = 0; c1_i73 < 10; c1_i73++) {
-    c1_u[c1_i73] = c1_b_inData[c1_i73];
+  for (c1_i70 = 0; c1_i70 < 10; c1_i70++) {
+    c1_u[c1_i70] = c1_b_inData[c1_i70];
   }
 
   c1_y = NULL;
@@ -1704,11 +1654,11 @@ static void c1_q_emlrt_marshallIn(SFc1_HeatExchangerInstanceStruct
   int32_T c1_y[10])
 {
   int32_T c1_iv0[10];
-  int32_T c1_i74;
+  int32_T c1_i71;
   (void)chartInstance;
   sf_mex_import(c1_parentId, sf_mex_dup(c1_u), c1_iv0, 1, 6, 0U, 1, 0U, 1, 10);
-  for (c1_i74 = 0; c1_i74 < 10; c1_i74++) {
-    c1_y[c1_i74] = c1_iv0[c1_i74];
+  for (c1_i71 = 0; c1_i71 < 10; c1_i71++) {
+    c1_y[c1_i71] = c1_iv0[c1_i71];
   }
 
   sf_mex_destroy(&c1_u);
@@ -1721,7 +1671,7 @@ static void c1_i_sf_marshallIn(void *chartInstanceVoid, const mxArray
   const char_T *c1_identifier;
   emlrtMsgIdentifier c1_thisId;
   int32_T c1_y[10];
-  int32_T c1_i75;
+  int32_T c1_i72;
   SFc1_HeatExchangerInstanceStruct *chartInstance;
   chartInstance = (SFc1_HeatExchangerInstanceStruct *)chartInstanceVoid;
   c1_ydelay_global = sf_mex_dup(c1_mxArrayInData);
@@ -1731,8 +1681,8 @@ static void c1_i_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c1_q_emlrt_marshallIn(chartInstance, sf_mex_dup(c1_ydelay_global), &c1_thisId,
                         c1_y);
   sf_mex_destroy(&c1_ydelay_global);
-  for (c1_i75 = 0; c1_i75 < 10; c1_i75++) {
-    (*(int32_T (*)[10])c1_outData)[c1_i75] = c1_y[c1_i75];
+  for (c1_i72 = 0; c1_i72 < 10; c1_i72++) {
+    (*(int32_T (*)[10])c1_outData)[c1_i72] = c1_y[c1_i72];
   }
 
   sf_mex_destroy(&c1_mxArrayInData);
@@ -1769,7 +1719,7 @@ static int32_T c1_get_counter_global(SFc1_HeatExchangerInstanceStruct
 {
   ssReadFromDataStoreElement(chartInstance->S, 0, NULL, c1_b);
   if (chartInstance->c1_counter_global_address == 0) {
-    sf_mex_error_message("Invalid access to Data Store Memory data \'counter_global\' (#28) in the initialization routine of the chart.\n");
+    sf_mex_error_message("Invalid access to Data Store Memory data \'counter_global\' (#94) in the initialization routine of the chart.\n");
   }
 
   return *chartInstance->c1_counter_global_address;
@@ -1780,7 +1730,7 @@ static void c1_set_counter_global(SFc1_HeatExchangerInstanceStruct
 {
   ssWriteToDataStoreElement(chartInstance->S, 0, NULL, c1_b);
   if (chartInstance->c1_counter_global_address == 0) {
-    sf_mex_error_message("Invalid access to Data Store Memory data \'counter_global\' (#28) in the initialization routine of the chart.\n");
+    sf_mex_error_message("Invalid access to Data Store Memory data \'counter_global\' (#94) in the initialization routine of the chart.\n");
   }
 
   *chartInstance->c1_counter_global_address = c1_c;
@@ -1792,7 +1742,7 @@ static int32_T *c1_access_counter_global(SFc1_HeatExchangerInstanceStruct
   int32_T *c1_c;
   ssReadFromDataStore(chartInstance->S, 0, NULL);
   if (chartInstance->c1_counter_global_address == 0) {
-    sf_mex_error_message("Invalid access to Data Store Memory data \'counter_global\' (#28) in the initialization routine of the chart.\n");
+    sf_mex_error_message("Invalid access to Data Store Memory data \'counter_global\' (#94) in the initialization routine of the chart.\n");
   }
 
   c1_c = chartInstance->c1_counter_global_address;
@@ -1808,7 +1758,7 @@ static int32_T c1_get_ydelay_global(SFc1_HeatExchangerInstanceStruct
 {
   ssReadFromDataStoreElement(chartInstance->S, 1, NULL, c1_b);
   if (chartInstance->c1_ydelay_global_address == 0) {
-    sf_mex_error_message("Invalid access to Data Store Memory data \'ydelay_global\' (#27) in the initialization routine of the chart.\n");
+    sf_mex_error_message("Invalid access to Data Store Memory data \'ydelay_global\' (#93) in the initialization routine of the chart.\n");
   }
 
   return (*chartInstance->c1_ydelay_global_address)[c1_b];
@@ -1819,7 +1769,7 @@ static void c1_set_ydelay_global(SFc1_HeatExchangerInstanceStruct *chartInstance
 {
   ssWriteToDataStoreElement(chartInstance->S, 1, NULL, c1_b);
   if (chartInstance->c1_ydelay_global_address == 0) {
-    sf_mex_error_message("Invalid access to Data Store Memory data \'ydelay_global\' (#27) in the initialization routine of the chart.\n");
+    sf_mex_error_message("Invalid access to Data Store Memory data \'ydelay_global\' (#93) in the initialization routine of the chart.\n");
   }
 
   (*chartInstance->c1_ydelay_global_address)[c1_b] = c1_c;
@@ -1831,7 +1781,7 @@ static int32_T *c1_access_ydelay_global(SFc1_HeatExchangerInstanceStruct
   int32_T *c1_c;
   ssReadFromDataStore(chartInstance->S, 1, NULL);
   if (chartInstance->c1_ydelay_global_address == 0) {
-    sf_mex_error_message("Invalid access to Data Store Memory data \'ydelay_global\' (#27) in the initialization routine of the chart.\n");
+    sf_mex_error_message("Invalid access to Data Store Memory data \'ydelay_global\' (#93) in the initialization routine of the chart.\n");
   }
 
   c1_c = *chartInstance->c1_ydelay_global_address;
@@ -1876,10 +1826,10 @@ extern void utFree(void*);
 
 void sf_c1_HeatExchanger_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2481058060U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2416002350U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3385156001U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1427947459U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2523435304U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1177438388U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1221069351U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(866971764U);
 }
 
 mxArray *sf_c1_HeatExchanger_get_autoinheritance_info(void)
@@ -1891,7 +1841,7 @@ mxArray *sf_c1_HeatExchanger_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("DEuHi6pgy7YwK6OrXpeGJG");
+    mxArray *mxChecksum = mxCreateString("ntBTLjqEg1GhBNd5Rc0lQH");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -2091,13 +2041,13 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
         /* Initialization of MATLAB Function Model Coverage */
         _SFD_CV_INIT_EML(0,1,1,2,0,2,0,1,1,0,0);
-        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,2290);
-        _SFD_CV_INIT_EML_SATURATION(0,1,0,2151,-1,2198);
-        _SFD_CV_INIT_EML_SATURATION(0,1,1,2271,-1,2289);
-        _SFD_CV_INIT_EML_IF(0,1,0,698,711,-1,1242);
-        _SFD_CV_INIT_EML_IF(0,1,1,991,1017,1118,1153);
-        _SFD_CV_INIT_EML_FOR(0,1,0,2132,2147,2203);
-        _SFD_CV_INIT_EML_WHILE(0,1,0,962,983,1194);
+        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,2310);
+        _SFD_CV_INIT_EML_SATURATION(0,1,0,2162,-1,2209);
+        _SFD_CV_INIT_EML_SATURATION(0,1,1,2291,-1,2309);
+        _SFD_CV_INIT_EML_IF(0,1,0,698,711,-1,1249);
+        _SFD_CV_INIT_EML_IF(0,1,1,998,1024,1125,1160);
+        _SFD_CV_INIT_EML_FOR(0,1,0,2143,2158,2214);
+        _SFD_CV_INIT_EML_WHILE(0,1,0,969,990,1201);
         _SFD_CV_INIT_SCRIPT(0,1,2,0,0,0,1,0,1,1);
         _SFD_CV_INIT_SCRIPT_FCN(0,0,"value_summary",0,-1,500);
         _SFD_CV_INIT_SCRIPT_IF(0,0,90,110,470,500);
@@ -2205,7 +2155,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "fEiXp9uIMrx5nhJRAbiGt";
+  return "b2Y5s5CnzrLPOryBipdrAD";
 }
 
 static void sf_opaque_initialize_c1_HeatExchanger(void *chartInstanceVar)
@@ -2383,10 +2333,10 @@ static void mdlSetWorkWidths_c1_HeatExchanger(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(4118807649U));
-  ssSetChecksum1(S,(1438282751U));
-  ssSetChecksum2(S,(4126580560U));
-  ssSetChecksum3(S,(2634409353U));
+  ssSetChecksum0(S,(4096130216U));
+  ssSetChecksum1(S,(716375280U));
+  ssSetChecksum2(S,(809507613U));
+  ssSetChecksum3(S,(2318795482U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,0);

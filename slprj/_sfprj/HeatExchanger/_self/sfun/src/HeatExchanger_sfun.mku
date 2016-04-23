@@ -8,7 +8,7 @@ LD = $(CC)
  
 MACHINE     = HeatExchanger
 TARGET      = sfun
-CHART_SRCS   = c1_HeatExchanger.c c2_HeatExchanger.c c3_HeatExchanger.c c4_HeatExchanger.c c5_HeatExchanger.c c6_HeatExchanger.c
+CHART_SRCS   = c1_HeatExchanger.c c2_HeatExchanger.c c3_HeatExchanger.c c4_HeatExchanger.c c5_HeatExchanger.c
 MACHINE_SRC  = HeatExchanger_sfun.c
 MACHINE_REG = HeatExchanger_sfun_registry.c
 MAKEFILE    = HeatExchanger_sfun.mku
@@ -23,7 +23,7 @@ MLSLSF_INCLUDES  = \
     -I"/Applications/MATLAB_R2014a.app/simulink/include" \
     -I"/Applications/MATLAB_R2014a.app/stateflow/c/mex/include" \
     -I"/Applications/MATLAB_R2014a.app/rtw/c/src" \
-    -I"/Users/wangwenchen/wcps_apps/stepF_HX/slprj/_sfprj/HeatExchanger/_self/sfun/src" 
+    -I"/Users/wangwenchen/github/paper2_experiment/slprj/_sfprj/HeatExchanger/_self/sfun/src" 
 
 THIRD_PARTY_INCLUDES = 
 

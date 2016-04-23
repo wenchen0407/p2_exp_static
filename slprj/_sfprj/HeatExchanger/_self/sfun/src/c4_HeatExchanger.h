@@ -20,6 +20,16 @@ typedef struct {
   boolean_T c4_isStable;
   boolean_T c4_doneDoubleBufferReInit;
   uint8_T c4_is_active_c4_HeatExchanger;
+  real_T c4_sensor_value;
+  boolean_T c4_sensor_value_not_empty;
+  real_T c4_i;
+  boolean_T c4_i_not_empty;
+  real_T c4_network_array[6002];
+  boolean_T c4_network_array_not_empty;
+  int32_T *c4_counter_global_address;
+  int32_T c4_counter_global_index;
+  int32_T (*c4_ydelay_global_address)[10];
+  int32_T c4_ydelay_global_index;
 } SFc4_HeatExchangerInstanceStruct;
 
 #endif                                 /*typedef_SFc4_HeatExchangerInstanceStruct*/

@@ -4,18 +4,18 @@
 # message type.
 #
 
-import Message
+import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 130
+DEFAULT_MESSAGE_SIZE = 121
 
 # The Active Message type associated with this message.
 AM_TYPE = 5
 
-class TestNetworkMsg(Message.Message):
-    # Create a new TestNetworkMsg of size 130.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=130):
-        Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
+class TestNetworkMsg(tinyos.message.Message.Message):
+    # Create a new TestNetworkMsg of size 121.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=121):
+        tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
     # Get AM_TYPE
@@ -116,10 +116,7 @@ class TestNetworkMsg(Message.Message):
         except:
             pass
         try:
-            s += "  [my_children_prob_bit=";
-            for i in range(0, 10):
-                s += "0x%x " % (self.getElement_my_children_prob_bit(i) & 0xff)
-            s += "]\n";
+            s += "  [avg_link_prob=0x%x]\n" % (self.get_avg_link_prob())
         except:
             pass
         try:
@@ -1519,144 +1516,64 @@ class TestNetworkMsg(Message.Message):
         return 8
     
     #
-    # Accessor methods for field: my_children_prob_bit
-    #   Field type: short[]
+    # Accessor methods for field: avg_link_prob
+    #   Field type: short
     #   Offset (bits): 920
-    #   Size of each element (bits): 8
+    #   Size (bits): 8
     #
 
     #
-    # Return whether the field 'my_children_prob_bit' is signed (False).
+    # Return whether the field 'avg_link_prob' is signed (False).
     #
-    def isSigned_my_children_prob_bit(self):
+    def isSigned_avg_link_prob(self):
         return False
     
     #
-    # Return whether the field 'my_children_prob_bit' is an array (True).
+    # Return whether the field 'avg_link_prob' is an array (False).
     #
-    def isArray_my_children_prob_bit(self):
-        return True
+    def isArray_avg_link_prob(self):
+        return False
     
     #
-    # Return the offset (in bytes) of the field 'my_children_prob_bit'
+    # Return the offset (in bytes) of the field 'avg_link_prob'
     #
-    def offset_my_children_prob_bit(self, index1):
-        offset = 920
-        if index1 < 0 or index1 >= 10:
-            raise IndexError
-        offset += 0 + index1 * 8
-        return (offset / 8)
+    def offset_avg_link_prob(self):
+        return (920 / 8)
     
     #
-    # Return the offset (in bits) of the field 'my_children_prob_bit'
+    # Return the offset (in bits) of the field 'avg_link_prob'
     #
-    def offsetBits_my_children_prob_bit(self, index1):
-        offset = 920
-        if index1 < 0 or index1 >= 10:
-            raise IndexError
-        offset += 0 + index1 * 8
-        return offset
+    def offsetBits_avg_link_prob(self):
+        return 920
     
     #
-    # Return the entire array 'my_children_prob_bit' as a short[]
+    # Return the value (as a short) of the field 'avg_link_prob'
     #
-    def get_my_children_prob_bit(self):
-        tmp = [None]*10
-        for index0 in range (0, self.numElements_my_children_prob_bit(0)):
-                tmp[index0] = self.getElement_my_children_prob_bit(index0)
-        return tmp
+    def get_avg_link_prob(self):
+        return self.getUIntElement(self.offsetBits_avg_link_prob(), 8, 1)
     
     #
-    # Set the contents of the array 'my_children_prob_bit' from the given short[]
+    # Set the value of the field 'avg_link_prob'
     #
-    def set_my_children_prob_bit(self, value):
-        for index0 in range(0, len(value)):
-            self.setElement_my_children_prob_bit(index0, value[index0])
-
-    #
-    # Return an element (as a short) of the array 'my_children_prob_bit'
-    #
-    def getElement_my_children_prob_bit(self, index1):
-        return self.getUIntElement(self.offsetBits_my_children_prob_bit(index1), 8, 1)
+    def set_avg_link_prob(self, value):
+        self.setUIntElement(self.offsetBits_avg_link_prob(), 8, value, 1)
     
     #
-    # Set an element of the array 'my_children_prob_bit'
+    # Return the size, in bytes, of the field 'avg_link_prob'
     #
-    def setElement_my_children_prob_bit(self, index1, value):
-        self.setUIntElement(self.offsetBits_my_children_prob_bit(index1), 8, value, 1)
-    
-    #
-    # Return the total size, in bytes, of the array 'my_children_prob_bit'
-    #
-    def totalSize_my_children_prob_bit(self):
-        return (80 / 8)
-    
-    #
-    # Return the total size, in bits, of the array 'my_children_prob_bit'
-    #
-    def totalSizeBits_my_children_prob_bit(self):
-        return 80
-    
-    #
-    # Return the size, in bytes, of each element of the array 'my_children_prob_bit'
-    #
-    def elementSize_my_children_prob_bit(self):
+    def size_avg_link_prob(self):
         return (8 / 8)
     
     #
-    # Return the size, in bits, of each element of the array 'my_children_prob_bit'
+    # Return the size, in bits, of the field 'avg_link_prob'
     #
-    def elementSizeBits_my_children_prob_bit(self):
+    def sizeBits_avg_link_prob(self):
         return 8
-    
-    #
-    # Return the number of dimensions in the array 'my_children_prob_bit'
-    #
-    def numDimensions_my_children_prob_bit(self):
-        return 1
-    
-    #
-    # Return the number of elements in the array 'my_children_prob_bit'
-    #
-    def numElements_my_children_prob_bit():
-        return 10
-    
-    #
-    # Return the number of elements in the array 'my_children_prob_bit'
-    # for the given dimension.
-    #
-    def numElements_my_children_prob_bit(self, dimension):
-        array_dims = [ 10,  ]
-        if dimension < 0 or dimension >= 1:
-            raise IndexException
-        if array_dims[dimension] == 0:
-            raise IndexError
-        return array_dims[dimension]
-    
-    #
-    # Fill in the array 'my_children_prob_bit' with a String
-    #
-    def setString_my_children_prob_bit(self, s):
-         l = len(s)
-         for i in range(0, l):
-             self.setElement_my_children_prob_bit(i, ord(s[i]));
-         self.setElement_my_children_prob_bit(l, 0) #null terminate
-    
-    #
-    # Read the array 'my_children_prob_bit' as a String
-    #
-    def getString_my_children_prob_bit(self):
-        carr = "";
-        for i in range(0, 4000):
-            if self.getElement_my_children_prob_bit(i) == chr(0):
-                break
-            carr += self.getElement_my_children_prob_bit(i)
-        return carr
     
     #
     # Accessor methods for field: hopcount
     #   Field type: short
-    #   Offset (bits): 1000
+    #   Offset (bits): 928
     #   Size (bits): 8
     #
 
@@ -1676,13 +1593,13 @@ class TestNetworkMsg(Message.Message):
     # Return the offset (in bytes) of the field 'hopcount'
     #
     def offset_hopcount(self):
-        return (1000 / 8)
+        return (928 / 8)
     
     #
     # Return the offset (in bits) of the field 'hopcount'
     #
     def offsetBits_hopcount(self):
-        return 1000
+        return 928
     
     #
     # Return the value (as a short) of the field 'hopcount'
@@ -1711,7 +1628,7 @@ class TestNetworkMsg(Message.Message):
     #
     # Accessor methods for field: sendCount
     #   Field type: int
-    #   Offset (bits): 1008
+    #   Offset (bits): 936
     #   Size (bits): 16
     #
 
@@ -1731,13 +1648,13 @@ class TestNetworkMsg(Message.Message):
     # Return the offset (in bytes) of the field 'sendCount'
     #
     def offset_sendCount(self):
-        return (1008 / 8)
+        return (936 / 8)
     
     #
     # Return the offset (in bits) of the field 'sendCount'
     #
     def offsetBits_sendCount(self):
-        return 1008
+        return 936
     
     #
     # Return the value (as a int) of the field 'sendCount'
@@ -1766,7 +1683,7 @@ class TestNetworkMsg(Message.Message):
     #
     # Accessor methods for field: sendSuccessCount
     #   Field type: int
-    #   Offset (bits): 1024
+    #   Offset (bits): 952
     #   Size (bits): 16
     #
 
@@ -1786,13 +1703,13 @@ class TestNetworkMsg(Message.Message):
     # Return the offset (in bytes) of the field 'sendSuccessCount'
     #
     def offset_sendSuccessCount(self):
-        return (1024 / 8)
+        return (952 / 8)
     
     #
     # Return the offset (in bits) of the field 'sendSuccessCount'
     #
     def offsetBits_sendSuccessCount(self):
-        return 1024
+        return 952
     
     #
     # Return the value (as a int) of the field 'sendSuccessCount'

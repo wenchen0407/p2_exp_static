@@ -9,7 +9,7 @@ include $(UPMA_DIR)/Makefile.include
 PFLAGS += -I/Users/wangwenchen/wcps_apps/pure-tdma
 CFLAGS += -I$(TOSDIR)/lib/printf
 CFLAGS += -DFOOTER_SIZE=0 -DTDMA -DUPMA
-UPMA_MAC = hx1-tdma
+UPMA_MAC = paper2_experiment
 
 TestNetworkMsg.py: TestNetwork.h
 	mig python -target=$(PLATFORM) $(CFLAGS) -python-classname=TestNetworkMsg TestNetwork.h TestNetworkMsg -o $@

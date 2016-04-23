@@ -172,7 +172,7 @@ r = t.radio()
 def initialize_network():
 
 	# this is topology for channel 26
-	f = open("topology.txt", "r")
+	f = open("topo.txt", "r")
 
 	#wireless rssi topology injection & model establishment
 	lines = f.readlines()
@@ -187,8 +187,8 @@ def initialize_network():
 	for channel_1 in [22, 23, 24, 25, 26]:
 		channel=channel_1
 		rssi_strength=rssi_level
-		neignbour_strength=-20
-		sync_rssi_strength=-10
+		neignbour_strength=100
+		sync_rssi_strength=100
 		
 		#for sender in range(1, 51):
 		#	for receiver in range(1, 51):
@@ -203,10 +203,15 @@ def initialize_network():
 		        #print "( "+str(node1)+", "+"0 )"+" rssi_level: "+str(float(sync_rssi_strength))
 		        #schedule[i][j]=int(node1)
 		        for node2 in nodes_post:
-		            r.add(int(node1), int(node2), float(rssi_level), channel)
-		            r.add(int(node2), int(node1), float(rssi_level), channel)
-		            #print "( "+str(node1)+", "+str(node2)+" )"+" rssi_level: "+str(float(rssi_level))
-		            #print "( "+str(node2)+", "+str(node1)+" )"+" rssi_level: "+str(float(rssi_level))
+		            if i<len(lines)-2:
+		                r.add(int(node1), int(node2), float(rssi_level), channel)
+		                r.add(int(node2), int(node1), float(rssi_level), channel)
+		            else:
+		                r.add(int(node1), int(node2), float(neignbour_strength), channel)
+		                r.add(int(node2), int(node1), float(neignbour_strength), channel)		            	
+		                print "( "+str(node1)+", "+str(node2)+" )"+" rssi_level: "+str(float(neignbour_strength))
+		                print "( "+str(node2)+", "+str(node1)+" )"+" rssi_level: "+str(float(neignbour_strength))
+
 		for node in lines[len(lines)-1].split():
 			r.add(int(node), 0, float(sync_rssi_strength), channel)
 			r.add(0, int(node), float(sync_rssi_strength), channel)
@@ -254,7 +259,7 @@ def initialize_network():
 			m.createNoiseModel(channel);
 		m.turnOn()
 		m.bootAtTime(0)
-		#print "Booting ", node, " at time ", str(0)
+		print "Booting ", node, " at time ", str(0)
 	return len(topo)
 	#
 
@@ -276,8 +281,8 @@ def get_new_topo():
 	for channel_1 in [22, 23, 24, 25, 26]:
 		channel=channel_1
 		rssi_strength=rssi_level
-		neignbour_strength=-20
-		sync_rssi_strength=-10
+		neignbour_strength=100
+		sync_rssi_strength=100
 		
 		#for sender in range(1, 51):
 		#	for receiver in range(1, 51):
@@ -292,10 +297,15 @@ def get_new_topo():
 		        #print "( "+str(node1)+", "+"0 )"+" rssi_level: "+str(float(sync_rssi_strength))
 		        #schedule[i][j]=int(node1)
 		        for node2 in nodes_post:
-		            r.add(int(node1), int(node2), float(rssi_level), channel)
-		            r.add(int(node2), int(node1), float(rssi_level), channel)
-		            #print "( "+str(node1)+", "+str(node2)+" )"+" rssi_level: "+str(float(rssi_level))
-		            #print "( "+str(node2)+", "+str(node1)+" )"+" rssi_level: "+str(float(rssi_level))
+		            if i<len(lines)-2:
+		                r.add(int(node1), int(node2), float(rssi_level), channel)
+		                r.add(int(node2), int(node1), float(rssi_level), channel)
+		            else:
+		                r.add(int(node1), int(node2), float(neignbour_strength), channel)
+		                r.add(int(node2), int(node1), float(neignbour_strength), channel)		            	
+		                print "( "+str(node1)+", "+str(node2)+" )"+" rssi_level: "+str(float(neignbour_strength))
+		                print "( "+str(node2)+", "+str(node1)+" )"+" rssi_level: "+str(float(neignbour_strength))
+
 		for node in lines[len(lines)-1].split():
 			r.add(int(node), 0, float(sync_rssi_strength), channel)
 			r.add(0, int(node), float(sync_rssi_strength), channel)
@@ -315,17 +325,47 @@ def get_new_topo():
 		for sensor in range(1, 51):
 			r.add(sensor, 0, float(sync_rssi_strength), channel_1)
 			r.add(0, sensor, float(sync_rssi_strength), channel_1)
-
-totalnode = initialize_network()
+'''
+	for node in range(0, len(topo)+1):
+		m = t.getNode(node);
+		for channel in [22, 23, 24, 25, 26]:
+			if channel==22:
+				noise = open("noise_chan22_110.txt", "r")
+				lines = noise.readlines()
+			elif channel==23:
+				noise = open("noise_chan23_110.txt", "r")
+				lines = noise.readlines()
+			elif channel==24:
+				noise = open("noise_chan24_110.txt", "r")
+				lines = noise.readlines()
+			elif channel==25:
+				noise = open("noise_chan25_110.txt", "r")
+				lines = noise.readlines()
+			elif channel==26:
+				noise = open("noise_chan26_110.txt", "r")
+				lines = noise.readlines()
+			for line in lines:
+				strrr = line.strip()
+				if (strrr != ""):
+					val = int(strrr)
+					m.addNoiseTraceReading(val, channel)
+			m.createNoiseModel(channel);
+		m.turnOn()
+		m.bootAtTime(0)
+		print "Booting ", node, " at time ", str(0)
+'''
+initialize_network()
+totalnode = 47
 #print "totalnode: ", totalnode
 CONNECTIVITY = 4
 SAMPLE = 50
 THRESHOLD = 0.7
-NUM_MEASUREMENTS=3
+NUM_MEASUREMENTS=9
 BACKLEVELS = 7
 CONSEGOODNH=2
 good_NH_counter=0
 curr_NH_ratio=0.0
+counter =0
 #last_NH_ratio=0.0
 #interval = 36
 p1=-0.7141
@@ -401,10 +441,10 @@ while True:
 	            		delaylist.fill(float(totalnode)/float(100))
 	            		reception=str(measure_list[0]) + ',' + str(measure_list[1]) + ',' + str(measure_list[2])+\
 	            		','+str(delaylist[0]) + ',' + str(delaylist[1]) + ',' + str(delaylist[2])
-            		#avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2])+int(measure_list[3])+int(measure_list[4])+int(measure_list[5])+int(measure_list[6])+int(measure_list[7])+int(measure_list[8]))/float(NUM_MEASUREMENTS)
-            		#avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2]+delaylist[3]+delaylist[4]+delaylist[5]+delaylist[6]+delaylist[7]+delaylist[8])/float(NUM_MEASUREMENTS)
-            		avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2]))/float(NUM_MEASUREMENTS)
-            		avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2])/float(NUM_MEASUREMENTS)
+            		avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2])+int(measure_list[3])+int(measure_list[4])+int(measure_list[5])+int(measure_list[6])+int(measure_list[7])+int(measure_list[8]))/float(NUM_MEASUREMENTS)
+            		avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2]+delaylist[3]+delaylist[4]+delaylist[5]+delaylist[6]+delaylist[7]+delaylist[8])/float(NUM_MEASUREMENTS)
+            		#avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2]))/float(NUM_MEASUREMENTS)
+            		#avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2])/float(NUM_MEASUREMENTS)
             		sub_network_health = p1*avg_delay*avg_delay+p2*avg_delay+p3-(1-avg_DR)
             		if sub_network_health >0:
             			good_NH_counter += 1
@@ -483,6 +523,18 @@ while True:
             		good_NH_counter=0
             		curr_NH_ratio=0.0
             	'''
+            	
+            	if run_count%(FRAMELENGTH+1) == 54:
+            		counter += 1
+            	if counter ==200:
+            		totalnode += 1
+            		new_k=get_max_delta(totalnode)
+            		seed += 1
+            		call(["./a.out", str(totalnode), str(new_k), str(seed)])
+            		print "add more node in the network, new node: ", totalnode, "new k: ", new_k
+            		#get_new_topo()
+            		counter =0
+            	
             	#print "sample_times", sample_times
             	#print "reception: ", reception
             	connection.sendall(reception)

@@ -5,6 +5,6 @@ rm noise_record.txt delay.txt result.txt send.txt rev.txt noise_generation_distr
 echo $1
 echo $2
 g++ $1
-./a.out 29 2 1
-python stepF_HX-server.py $2
+./a.out 20 1 1
+python tossim-event-server-iccps15.py $2
 

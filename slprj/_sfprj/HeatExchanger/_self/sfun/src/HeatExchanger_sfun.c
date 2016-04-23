@@ -7,7 +7,6 @@
 #include "c3_HeatExchanger.h"
 #include "c4_HeatExchanger.h"
 #include "c5_HeatExchanger.h"
-#include "c6_HeatExchanger.h"
 
 /* Type Definitions */
 
@@ -58,11 +57,6 @@ unsigned int sf_HeatExchanger_method_dispatcher(SimStruct *simstructPtr,
     return 1;
   }
 
-  if (chartFileNumber==6) {
-    c6_HeatExchanger_method_dispatcher(simstructPtr, method, data);
-    return 1;
-  }
-
   return 0;
 }
 
@@ -96,10 +90,10 @@ unsigned int sf_HeatExchanger_process_check_sum_call( int nlhs, mxArray * plhs[]
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3179850939U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(505857072U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3776966029U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(398771514U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3822752784U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3829682116U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(839253624U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3050822509U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -139,13 +133,6 @@ unsigned int sf_HeatExchanger_process_check_sum_call( int nlhs, mxArray * plhs[]
           break;
         }
 
-       case 6:
-        {
-          extern void sf_c6_HeatExchanger_get_check_sum(mxArray *plhs[]);
-          sf_c6_HeatExchanger_get_check_sum(plhs);
-          break;
-        }
-
        default:
         ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0.0);
         ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0.0);
@@ -161,10 +148,10 @@ unsigned int sf_HeatExchanger_process_check_sum_call( int nlhs, mxArray * plhs[]
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(524046308U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(507962696U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2521037964U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3421943469U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1297669665U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1195139100U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(891558248U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1328026735U);
   }
 
   return 1;
@@ -202,7 +189,7 @@ unsigned int sf_HeatExchanger_autoinheritance_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(aiChksum, "DEuHi6pgy7YwK6OrXpeGJG") == 0) {
+        if (strcmp(aiChksum, "ntBTLjqEg1GhBNd5Rc0lQH") == 0) {
           extern mxArray *sf_c1_HeatExchanger_get_autoinheritance_info(void);
           plhs[0] = sf_c1_HeatExchanger_get_autoinheritance_info();
           break;
@@ -238,7 +225,7 @@ unsigned int sf_HeatExchanger_autoinheritance_info( int nlhs, mxArray * plhs[],
 
      case 4:
       {
-        if (strcmp(aiChksum, "Hxc98yGX2Qqq9Bzcs4Lr8G") == 0) {
+        if (strcmp(aiChksum, "YrelT0eykAyDSDeQKg011") == 0) {
           extern mxArray *sf_c4_HeatExchanger_get_autoinheritance_info(void);
           plhs[0] = sf_c4_HeatExchanger_get_autoinheritance_info();
           break;
@@ -250,21 +237,9 @@ unsigned int sf_HeatExchanger_autoinheritance_info( int nlhs, mxArray * plhs[],
 
      case 5:
       {
-        if (strcmp(aiChksum, "UMb6upi1qttuBCzAO4yxrG") == 0) {
+        if (strcmp(aiChksum, "HSfer62eynyK0VyIKcPX5C") == 0) {
           extern mxArray *sf_c5_HeatExchanger_get_autoinheritance_info(void);
           plhs[0] = sf_c5_HeatExchanger_get_autoinheritance_info();
-          break;
-        }
-
-        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
-        break;
-      }
-
-     case 6:
-      {
-        if (strcmp(aiChksum, "pvBdJFsB7mAxJpx5GMinsE") == 0) {
-          extern mxArray *sf_c6_HeatExchanger_get_autoinheritance_info(void);
-          plhs[0] = sf_c6_HeatExchanger_get_autoinheritance_info();
           break;
         }
 
@@ -362,17 +337,6 @@ unsigned int sf_HeatExchanger_get_eml_resolved_functions_info( int nlhs, mxArray
         break;
       }
 
-     case 6:
-      {
-        extern const mxArray
-          *sf_c6_HeatExchanger_get_eml_resolved_functions_info(void);
-        mxArray *persistentMxArray = (mxArray *)
-          sf_c6_HeatExchanger_get_eml_resolved_functions_info();
-        plhs[0] = mxDuplicateArray(persistentMxArray);
-        mxDestroyArray(persistentMxArray);
-        break;
-      }
-
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -410,7 +374,7 @@ unsigned int sf_HeatExchanger_third_party_uses_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "fEiXp9uIMrx5nhJRAbiGt") == 0) {
+        if (strcmp(tpChksum, "b2Y5s5CnzrLPOryBipdrAD") == 0) {
           extern mxArray *sf_c1_HeatExchanger_third_party_uses_info(void);
           plhs[0] = sf_c1_HeatExchanger_third_party_uses_info();
           break;
@@ -437,7 +401,7 @@ unsigned int sf_HeatExchanger_third_party_uses_info( int nlhs, mxArray * plhs[],
 
      case 4:
       {
-        if (strcmp(tpChksum, "5X7ZD1jPs1eOA9rSM8WzkB") == 0) {
+        if (strcmp(tpChksum, "6wZltbN9nEeN9SBodkluN") == 0) {
           extern mxArray *sf_c4_HeatExchanger_third_party_uses_info(void);
           plhs[0] = sf_c4_HeatExchanger_third_party_uses_info();
           break;
@@ -446,18 +410,9 @@ unsigned int sf_HeatExchanger_third_party_uses_info( int nlhs, mxArray * plhs[],
 
      case 5:
       {
-        if (strcmp(tpChksum, "L3G5yhLXKeEWsyisiUd3a") == 0) {
+        if (strcmp(tpChksum, "6QSKLy51AxYr8qrg2qOmDD") == 0) {
           extern mxArray *sf_c5_HeatExchanger_third_party_uses_info(void);
           plhs[0] = sf_c5_HeatExchanger_third_party_uses_info();
-          break;
-        }
-      }
-
-     case 6:
-      {
-        if (strcmp(tpChksum, "tuNozn71bhIRD68zoQZanF") == 0) {
-          extern mxArray *sf_c6_HeatExchanger_third_party_uses_info(void);
-          plhs[0] = sf_c6_HeatExchanger_third_party_uses_info();
           break;
         }
       }
@@ -492,7 +447,7 @@ unsigned int sf_HeatExchanger_updateBuildInfo_args_info( int nlhs, mxArray *
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "fEiXp9uIMrx5nhJRAbiGt") == 0) {
+        if (strcmp(tpChksum, "b2Y5s5CnzrLPOryBipdrAD") == 0) {
           extern mxArray *sf_c1_HeatExchanger_updateBuildInfo_args_info(void);
           plhs[0] = sf_c1_HeatExchanger_updateBuildInfo_args_info();
           break;
@@ -519,7 +474,7 @@ unsigned int sf_HeatExchanger_updateBuildInfo_args_info( int nlhs, mxArray *
 
      case 4:
       {
-        if (strcmp(tpChksum, "5X7ZD1jPs1eOA9rSM8WzkB") == 0) {
+        if (strcmp(tpChksum, "6wZltbN9nEeN9SBodkluN") == 0) {
           extern mxArray *sf_c4_HeatExchanger_updateBuildInfo_args_info(void);
           plhs[0] = sf_c4_HeatExchanger_updateBuildInfo_args_info();
           break;
@@ -528,18 +483,9 @@ unsigned int sf_HeatExchanger_updateBuildInfo_args_info( int nlhs, mxArray *
 
      case 5:
       {
-        if (strcmp(tpChksum, "L3G5yhLXKeEWsyisiUd3a") == 0) {
+        if (strcmp(tpChksum, "6QSKLy51AxYr8qrg2qOmDD") == 0) {
           extern mxArray *sf_c5_HeatExchanger_updateBuildInfo_args_info(void);
           plhs[0] = sf_c5_HeatExchanger_updateBuildInfo_args_info();
-          break;
-        }
-      }
-
-     case 6:
-      {
-        if (strcmp(tpChksum, "tuNozn71bhIRD68zoQZanF") == 0) {
-          extern mxArray *sf_c6_HeatExchanger_updateBuildInfo_args_info(void);
-          plhs[0] = sf_c6_HeatExchanger_updateBuildInfo_args_info();
           break;
         }
       }
@@ -555,7 +501,7 @@ unsigned int sf_HeatExchanger_updateBuildInfo_args_info( int nlhs, mxArray *
 void HeatExchanger_debug_initialize(struct SfDebugInstanceStruct* debugInstance)
 {
   _HeatExchangerMachineNumber_ = sf_debug_initialize_machine(debugInstance,
-    "HeatExchanger","sfun",0,6,0,0,0);
+    "HeatExchanger","sfun",0,5,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _HeatExchangerMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,
