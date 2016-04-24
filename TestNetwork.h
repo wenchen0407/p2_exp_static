@@ -36,6 +36,10 @@ typedef nx_struct TestNetworkMsg {
   //nx_uint8_t my_children_prob_bit[MAXCHILDREN];
 
   nx_uint8_t avg_link_prob;
+
+  nx_uint8_t able_to_send_lp;
+
+  //nx_uint8_t curr_sample_times;
   
   //nx_uint8_t has_dead_node;
 

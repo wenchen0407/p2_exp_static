@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 121
+DEFAULT_MESSAGE_SIZE = 122
 
 # The Active Message type associated with this message.
 AM_TYPE = 5
 
 class TestNetworkMsg(tinyos.message.Message.Message):
-    # Create a new TestNetworkMsg of size 121.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=121):
+    # Create a new TestNetworkMsg of size 122.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=122):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -117,6 +117,10 @@ class TestNetworkMsg(tinyos.message.Message.Message):
             pass
         try:
             s += "  [avg_link_prob=0x%x]\n" % (self.get_avg_link_prob())
+        except:
+            pass
+        try:
+            s += "  [able_to_send_lp=0x%x]\n" % (self.get_able_to_send_lp())
         except:
             pass
         try:
@@ -1571,9 +1575,64 @@ class TestNetworkMsg(tinyos.message.Message.Message):
         return 8
     
     #
-    # Accessor methods for field: hopcount
+    # Accessor methods for field: able_to_send_lp
     #   Field type: short
     #   Offset (bits): 928
+    #   Size (bits): 8
+    #
+
+    #
+    # Return whether the field 'able_to_send_lp' is signed (False).
+    #
+    def isSigned_able_to_send_lp(self):
+        return False
+    
+    #
+    # Return whether the field 'able_to_send_lp' is an array (False).
+    #
+    def isArray_able_to_send_lp(self):
+        return False
+    
+    #
+    # Return the offset (in bytes) of the field 'able_to_send_lp'
+    #
+    def offset_able_to_send_lp(self):
+        return (928 / 8)
+    
+    #
+    # Return the offset (in bits) of the field 'able_to_send_lp'
+    #
+    def offsetBits_able_to_send_lp(self):
+        return 928
+    
+    #
+    # Return the value (as a short) of the field 'able_to_send_lp'
+    #
+    def get_able_to_send_lp(self):
+        return self.getUIntElement(self.offsetBits_able_to_send_lp(), 8, 1)
+    
+    #
+    # Set the value of the field 'able_to_send_lp'
+    #
+    def set_able_to_send_lp(self, value):
+        self.setUIntElement(self.offsetBits_able_to_send_lp(), 8, value, 1)
+    
+    #
+    # Return the size, in bytes, of the field 'able_to_send_lp'
+    #
+    def size_able_to_send_lp(self):
+        return (8 / 8)
+    
+    #
+    # Return the size, in bits, of the field 'able_to_send_lp'
+    #
+    def sizeBits_able_to_send_lp(self):
+        return 8
+    
+    #
+    # Accessor methods for field: hopcount
+    #   Field type: short
+    #   Offset (bits): 936
     #   Size (bits): 8
     #
 
@@ -1593,13 +1652,13 @@ class TestNetworkMsg(tinyos.message.Message.Message):
     # Return the offset (in bytes) of the field 'hopcount'
     #
     def offset_hopcount(self):
-        return (928 / 8)
+        return (936 / 8)
     
     #
     # Return the offset (in bits) of the field 'hopcount'
     #
     def offsetBits_hopcount(self):
-        return 928
+        return 936
     
     #
     # Return the value (as a short) of the field 'hopcount'
@@ -1628,7 +1687,7 @@ class TestNetworkMsg(tinyos.message.Message.Message):
     #
     # Accessor methods for field: sendCount
     #   Field type: int
-    #   Offset (bits): 936
+    #   Offset (bits): 944
     #   Size (bits): 16
     #
 
@@ -1648,13 +1707,13 @@ class TestNetworkMsg(tinyos.message.Message.Message):
     # Return the offset (in bytes) of the field 'sendCount'
     #
     def offset_sendCount(self):
-        return (936 / 8)
+        return (944 / 8)
     
     #
     # Return the offset (in bits) of the field 'sendCount'
     #
     def offsetBits_sendCount(self):
-        return 936
+        return 944
     
     #
     # Return the value (as a int) of the field 'sendCount'
@@ -1683,7 +1742,7 @@ class TestNetworkMsg(tinyos.message.Message.Message):
     #
     # Accessor methods for field: sendSuccessCount
     #   Field type: int
-    #   Offset (bits): 952
+    #   Offset (bits): 960
     #   Size (bits): 16
     #
 
@@ -1703,13 +1762,13 @@ class TestNetworkMsg(tinyos.message.Message.Message):
     # Return the offset (in bytes) of the field 'sendSuccessCount'
     #
     def offset_sendSuccessCount(self):
-        return (952 / 8)
+        return (960 / 8)
     
     #
     # Return the offset (in bits) of the field 'sendSuccessCount'
     #
     def offsetBits_sendSuccessCount(self):
-        return 952
+        return 960
     
     #
     # Return the value (as a int) of the field 'sendSuccessCount'

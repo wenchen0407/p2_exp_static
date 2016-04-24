@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm noise_record.txt delay.txt result.txt send.txt rev.txt noise_generation_distribution.txt network_health.txt link_prob.txt sensor_data.txt
+rm control_input_file.txt node_change_log.txt noise_record.txt delay.txt result.txt send.txt rev.txt noise_generation_distribution.txt network_health.txt link_prob.txt sensor_data.txt
 
 echo $1
 echo $2

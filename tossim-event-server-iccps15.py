@@ -355,12 +355,12 @@ def get_new_topo():
 		print "Booting ", node, " at time ", str(0)
 '''
 initialize_network()
-totalnode = 47
+totalnode = 20
 #print "totalnode: ", totalnode
 CONNECTIVITY = 4
 SAMPLE = 50
 THRESHOLD = 0.7
-NUM_MEASUREMENTS=9
+NUM_MEASUREMENTS=3
 BACKLEVELS = 7
 CONSEGOODNH=2
 good_NH_counter=0
@@ -441,17 +441,17 @@ while True:
 	            		delaylist.fill(float(totalnode)/float(100))
 	            		reception=str(measure_list[0]) + ',' + str(measure_list[1]) + ',' + str(measure_list[2])+\
 	            		','+str(delaylist[0]) + ',' + str(delaylist[1]) + ',' + str(delaylist[2])
-            		avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2])+int(measure_list[3])+int(measure_list[4])+int(measure_list[5])+int(measure_list[6])+int(measure_list[7])+int(measure_list[8]))/float(NUM_MEASUREMENTS)
-            		avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2]+delaylist[3]+delaylist[4]+delaylist[5]+delaylist[6]+delaylist[7]+delaylist[8])/float(NUM_MEASUREMENTS)
-            		#avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2]))/float(NUM_MEASUREMENTS)
-            		#avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2])/float(NUM_MEASUREMENTS)
+            		#avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2])+int(measure_list[3])+int(measure_list[4])+int(measure_list[5])+int(measure_list[6])+int(measure_list[7])+int(measure_list[8]))/float(NUM_MEASUREMENTS)
+            		#avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2]+delaylist[3]+delaylist[4]+delaylist[5]+delaylist[6]+delaylist[7]+delaylist[8])/float(NUM_MEASUREMENTS)
+            		avg_DR =  float(int(measure_list[0])+int(measure_list[1])+int(measure_list[2]))/float(NUM_MEASUREMENTS)
+            		avg_delay = float(delaylist[0]+delaylist[1]+delaylist[2])/float(NUM_MEASUREMENTS)
             		sub_network_health = p1*avg_delay*avg_delay+p2*avg_delay+p3-(1-avg_DR)
             		if sub_network_health >0:
             			good_NH_counter += 1
             		#print "avg_DR: ", avg_DR
             		#print "avg_delay: ", avg_delay
             		#print "sub network_health: ", sub_network_health
-            		res_file = open("network_health.txt", "a");
+            		res_file = open("network_health.txt", "a")
             		res_file.write(str(avg_DR))
             		res_file.write('\t')
             		res_file.write(str(avg_delay))
@@ -463,6 +463,11 @@ while True:
             		res_file.write(str(totalnode))
             		res_file.write('\n')
             		res_file.close()
+
+            		control_input_file = open("control_input_file.txt", "a")
+            		control_input_file.write(reception)
+            		control_input_file.write('\n')
+            		control_input_file.close()
 
             		measure_list=['0', '0', '0', '0', '0', '0', '0', '0', '0']
 
@@ -522,7 +527,7 @@ while True:
             		sample_times = 0
             		good_NH_counter=0
             		curr_NH_ratio=0.0
-            	'''
+            	
             	
             	if run_count%(FRAMELENGTH+1) == 54:
             		counter += 1
@@ -534,7 +539,7 @@ while True:
             		print "add more node in the network, new node: ", totalnode, "new k: ", new_k
             		#get_new_topo()
             		counter =0
-            	
+            	'''
             	#print "sample_times", sample_times
             	#print "reception: ", reception
             	connection.sendall(reception)

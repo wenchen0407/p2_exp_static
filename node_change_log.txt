@@ -1,0 +1,28 @@
+continue multiplictive increasing!!!!, increment: 1, CURRNODES: 21, new_opt: 31, old_opt: 0
+continue multiplictive increasing!!!!, increment: 2, CURRNODES: 23, new_opt: 31, old_opt: 0
+continue multiplictive increasing!!!!, increment: 4, CURRNODES: 27, new_opt: 31, old_opt: 0
+continue multiplictive increasing!!!!, increment: 8, CURRNODES: 35, new_opt: 39, old_opt: 31
+continue multiplictive increasing!!!!, increment: 16, CURRNODES: 40, new_opt: 39, old_opt: 31
+conservertive decrease !!!!, CURRNODES:39, new_opt: 39, old_opt: 31
+reset increment, CURRNODES: 39, new_opt: 39, old_opt: 31
+continue multiplictive increasing!!!!, increment: 1, CURRNODES: 40, new_opt: 50, old_opt: 39
+continue multiplictive increasing!!!!, increment: 2, CURRNODES: 42, new_opt: 50, old_opt: 39
+continue multiplictive increasing!!!!, increment: 4, CURRNODES: 46, new_opt: 50, old_opt: 39
+continue multiplictive increasing!!!!, increment: 8, CURRNODES: 51, new_opt: 50, old_opt: 39
+conservertive decrease !!!!, CURRNODES:50, new_opt: 47, old_opt: 50
+conservertive decrease !!!!, CURRNODES:49, new_opt: 47, old_opt: 50
+conservertive decrease !!!!, CURRNODES:48, new_opt: 47, old_opt: 50
+conservertive decrease !!!!, CURRNODES:47, new_opt: 47, old_opt: 50
+conservertive decrease !!!!, CURRNODES:46, new_opt: 46, old_opt: 47
+reset increment, CURRNODES: 46, new_opt: 46, old_opt: 47
+reset increment, CURRNODES: 46, new_opt: 46, old_opt: 47
+reset increment, CURRNODES: 46, new_opt: 46, old_opt: 47
+conservertive decrease !!!!, CURRNODES:45, new_opt: 41, old_opt: 46
+conservertive decrease !!!!, CURRNODES:44, new_opt: 41, old_opt: 46
+conservertive decrease !!!!, CURRNODES:43, new_opt: 41, old_opt: 46
+conservertive decrease !!!!, CURRNODES:42, new_opt: 41, old_opt: 46
+conservertive decrease !!!!, CURRNODES:41, new_opt: 37, old_opt: 41
+conservertive decrease !!!!, CURRNODES:40, new_opt: 37, old_opt: 41
+conservertive decrease !!!!, CURRNODES:39, new_opt: 37, old_opt: 41
+conservertive decrease !!!!, CURRNODES:38, new_opt: 37, old_opt: 41
+continue multiplictive increasing!!!!, increment: 1, CURRNODES: 39, new_opt: 44, old_opt: 37
