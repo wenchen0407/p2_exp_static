@@ -9,6 +9,7 @@ import time
 import os.path
 import numpy as np
 from subprocess import call
+import random
 
 #rssi_linkError = {
 #	-78: 0.345,
@@ -265,7 +266,7 @@ def initialize_network():
 
 # initial network topology
 
-def get_new_topo():
+def get_new_topo(new_noise_strength):
 	f = open("topology.txt", "r")
 
 	#wireless rssi topology injection & model establishment
@@ -280,7 +281,7 @@ def get_new_topo():
 	#print "L_topo: ", L_topo
 	for channel_1 in [22, 23, 24, 25, 26]:
 		channel=channel_1
-		rssi_strength=rssi_level
+		rssi_strength=new_rssi_level
 		neignbour_strength=100
 		sync_rssi_strength=100
 		
@@ -298,8 +299,8 @@ def get_new_topo():
 		        #schedule[i][j]=int(node1)
 		        for node2 in nodes_post:
 		            if i<len(lines)-2:
-		                r.add(int(node1), int(node2), float(rssi_level), channel)
-		                r.add(int(node2), int(node1), float(rssi_level), channel)
+		                r.add(int(node1), int(node2), float(rssi_strength), channel)
+		                r.add(int(node2), int(node1), float(rssi_strength), channel)
 		            else:
 		                r.add(int(node1), int(node2), float(neignbour_strength), channel)
 		                r.add(int(node2), int(node1), float(neignbour_strength), channel)		            	
@@ -325,7 +326,7 @@ def get_new_topo():
 		for sensor in range(1, 51):
 			r.add(sensor, 0, float(sync_rssi_strength), channel_1)
 			r.add(0, sensor, float(sync_rssi_strength), channel_1)
-'''
+
 	for node in range(0, len(topo)+1):
 		m = t.getNode(node);
 		for channel in [22, 23, 24, 25, 26]:
@@ -347,18 +348,18 @@ def get_new_topo():
 			for line in lines:
 				strrr = line.strip()
 				if (strrr != ""):
-					val = int(strrr)
+					val = int(strrr)-new_noise_strength
 					m.addNoiseTraceReading(val, channel)
 			m.createNoiseModel(channel);
 		m.turnOn()
 		m.bootAtTime(0)
 		print "Booting ", node, " at time ", str(0)
-'''
+
 initialize_network()
 totalnode = 20
 #print "totalnode: ", totalnode
 CONNECTIVITY = 4
-SAMPLE = 50
+RSSI_DURATION = 60
 THRESHOLD = 0.7
 NUM_MEASUREMENTS=3
 BACKLEVELS = 7
@@ -481,6 +482,14 @@ while True:
 
             		reception=str(measure_list[0]) + ',' + str(measure_list[1]) + ',' + str(measure_list[2])+\
             		','+str(delaylist[0]) + ',' + str(delaylist[1]) + ',' + str(delaylist[2])
+
+            	if run_count%(FRAMELENGTH+1) == 53 and sample_times == RSSI_DURATION:
+            		# change the current rssi value, random generate a integer value from range(-84, -62)
+            		new_noise = random.randint(0, 31)
+            		print "new_rssi: ", new_noise
+            		get_new_topo(new_noise)
+            		RSSI_DURATION = random.randint(60, 200)
+
             	'''
             	if run_count%(FRAMELENGTH+1) == 53 and sample_times == SAMPLE:
             		noise_file = open("noise_generation_distribution.txt", "a")
