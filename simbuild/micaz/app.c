@@ -131,7 +131,7 @@ typedef long __darwin_time_t;
 # 58 "/usr/include/sys/_types.h" 3
 struct __darwin_pthread_handler_rec {
 
-  void (*__routine)(void *arg_0x10f0d3738);
+  void (*__routine)(void *arg_0x104f9a738);
   void *__arg;
   struct __darwin_pthread_handler_rec *__next;
 };
@@ -410,26 +410,26 @@ typedef struct { unsigned char nxdata[2]; } __attribute__((packed)) nxle_uint16_
 typedef struct { unsigned char nxdata[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char nxdata[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 81 "/usr/include/string.h" 3
-int memcmp(const void *arg_0x10f27a970, const void *arg_0x10f27ac48, size_t arg_0x10f278020);
+int memcmp(const void *arg_0x105141970, const void *arg_0x105141c48, size_t arg_0x10513f020);
 
 
 
 
 
-int strcmp(const char *arg_0x10f283af8, const char *arg_0x10f283dd0);
+int strcmp(const char *arg_0x10514aaf8, const char *arg_0x10514add0);
 
 
 
 
-size_t strlen(const char *arg_0x10f285628);
+size_t strlen(const char *arg_0x10514c628);
 
 
 
 
-char *strrchr(const char *arg_0x10f28f5e0, int arg_0x10f28f848);
+char *strrchr(const char *arg_0x1051565e0, int arg_0x105156848);
 
 
-char *strtok(char *arg_0x10f28c858, const char *arg_0x10f28cb30);
+char *strtok(char *arg_0x105153858, const char *arg_0x105153b30);
 #line 155
 typedef __darwin_ssize_t ssize_t;
 # 58 "/usr/include/secure/_string.h" 3
@@ -905,7 +905,7 @@ struct sigevent {
   int sigev_notify;
   int sigev_signo;
   union sigval sigev_value;
-  void (*sigev_notify_function)(union sigval arg_0x10f32e8d0);
+  void (*sigev_notify_function)(union sigval arg_0x1051f58d0);
   pthread_attr_t *sigev_notify_attributes;
 };
 #line 205
@@ -924,15 +924,15 @@ typedef struct __siginfo {
 } siginfo_t;
 #line 286
 union __sigaction_u {
-  void (*__sa_handler)(int arg_0x10f3359f8);
-  void (*__sa_sigaction)(int arg_0x10f3340c8, struct __siginfo *arg_0x10f334428, 
-  void *arg_0x10f3346e8);
+  void (*__sa_handler)(int arg_0x1051fc9f8);
+  void (*__sa_sigaction)(int arg_0x1051fb0c8, struct __siginfo *arg_0x1051fb428, 
+  void *arg_0x1051fb6e8);
 };
 
 
 struct __sigaction {
   union __sigaction_u __sigaction_u;
-  void (*sa_tramp)(void *arg_0x10f3335e0, int arg_0x10f333848, int arg_0x10f333ab0, siginfo_t *arg_0x10f333db0, void *arg_0x10f33d0c8);
+  void (*sa_tramp)(void *arg_0x1051fa5e0, int arg_0x1051fa848, int arg_0x1051faab0, siginfo_t *arg_0x1051fadb0, void *arg_0x1052040c8);
   sigset_t sa_mask;
   int sa_flags;
 };
@@ -946,10 +946,10 @@ struct sigaction {
   int sa_flags;
 };
 #line 348
-typedef void (*sig_t)(int arg_0x10f33cb40);
+typedef void (*sig_t)(int arg_0x105203b40);
 #line 365
 struct sigvec {
-  void (*sv_handler)(int arg_0x10f33b608);
+  void (*sv_handler)(int arg_0x105202608);
   int sv_mask;
   int sv_flags;
 };
@@ -1070,7 +1070,7 @@ typedef struct __nesc_unnamed4249 {
   long long rem;
 } lldiv_t;
 #line 149
-int atoi(const char *arg_0x10f36e878);
+int atoi(const char *arg_0x105235878);
 
 
 
@@ -1080,8 +1080,8 @@ int atoi(const char *arg_0x10f36e878);
 
 
 
-void exit(int arg_0x10f373370) __attribute((noreturn)) ;
-void free(void *arg_0x10f373c28);
+void exit(int arg_0x10523a370) __attribute((noreturn)) ;
+void free(void *arg_0x10523ac28);
 
 
 
@@ -1090,7 +1090,7 @@ void free(void *arg_0x10f373c28);
 
 
 
-void *malloc(size_t arg_0x10f37a5a8);
+void *malloc(size_t arg_0x1052415a8);
 # 80 "/usr/include/i386/types.h" 3
 typedef unsigned char u_int8_t;
 
@@ -1138,15 +1138,15 @@ typedef __darwin_mode_t mode_t;
 typedef float float_t;
 typedef double double_t;
 #line 395
-extern double log(double arg_0x10f43d408);
+extern double log(double arg_0x105304408);
 #line 439
-extern double fabs(double arg_0x10f452020);
+extern double fabs(double arg_0x105319020);
 #line 451
-extern double pow(double arg_0x10f45b580, double arg_0x10f45b7e8);
+extern double pow(double arg_0x105322580, double arg_0x1053227e8);
 
 
 
-extern double sqrt(double arg_0x10f459370);
+extern double sqrt(double arg_0x105320370);
 
 
 
@@ -1154,9 +1154,9 @@ extern double sqrt(double arg_0x10f459370);
 
 
 
-extern double erfc(double arg_0x10f465590);
+extern double erfc(double arg_0x10532c590);
 #line 482
-extern double floor(double arg_0x10f46d968);
+extern double floor(double arg_0x105334968);
 #line 652
 struct exception {
   int type;
@@ -1199,8 +1199,8 @@ typedef struct __nesc_unnamed4253 {
   char __magic[8];
   char __encoding[32];
 
-  __darwin_rune_t (*__sgetrune)(const char *arg_0x10f4b4d10, __darwin_size_t arg_0x10f4b3060, char const **arg_0x10f4b3370);
-  int (*__sputrune)(__darwin_rune_t arg_0x10f4b3a68, char *arg_0x10f4b3d08, __darwin_size_t arg_0x10f4b2060, char **arg_0x10f4b2338);
+  __darwin_rune_t (*__sgetrune)(const char *arg_0x10537bd10, __darwin_size_t arg_0x10537a060, char const **arg_0x10537a370);
+  int (*__sputrune)(__darwin_rune_t arg_0x10537aa68, char *arg_0x10537ad08, __darwin_size_t arg_0x105379060, char **arg_0x105379338);
   __darwin_rune_t __invalid_rune;
 
   __uint32_t __runetype[1 << 8];
@@ -1259,10 +1259,10 @@ typedef struct __sFILE {
 
 
   void *_cookie;
-  int (*_close)(void *arg_0x10f4f10c8);
-  int (*_read)(void *arg_0x10f4f1730, char *arg_0x10f4f19d0, int arg_0x10f4f1c38);
-  fpos_t (*_seek)(void *arg_0x10f4ef338, fpos_t arg_0x10f4ef5e0, int arg_0x10f4ef848);
-  int (*_write)(void *arg_0x10f4ee020, const char *arg_0x10f4ee2f8, int arg_0x10f4ee560);
+  int (*_close)(void *arg_0x1053b80c8);
+  int (*_read)(void *arg_0x1053b8730, char *arg_0x1053b89d0, int arg_0x1053b8c38);
+  fpos_t (*_seek)(void *arg_0x1053b6338, fpos_t arg_0x1053b65e0, int arg_0x1053b6848);
+  int (*_write)(void *arg_0x1053b5020, const char *arg_0x1053b52f8, int arg_0x1053b5560);
 
 
   struct __sbuf _ub;
@@ -1281,31 +1281,31 @@ typedef struct __sFILE {
   fpos_t _offset;
 } FILE;
 #line 240
-int fclose(FILE *arg_0x10f4fa6b8);
+int fclose(FILE *arg_0x1053c16b8);
 
 
-int fflush(FILE *arg_0x10f4f70c8);
-
-
-
+int fflush(FILE *arg_0x1053be0c8);
 
 
 
-FILE *fopen(const char *arg_0x10f506a20, const char *arg_0x10f506cf8) __asm ("_""fopen");
 
-int fprintf(FILE *arg_0x10f505ad8, const char *arg_0x10f505db0, ...) __attribute((__format__(__printf__, 2, 3))) ;
+
+
+FILE *fopen(const char *arg_0x1053cda20, const char *arg_0x1053cdcf8) __asm ("_""fopen");
+
+int fprintf(FILE *arg_0x1053ccad8, const char *arg_0x1053ccdb0, ...) __attribute((__format__(__printf__, 2, 3))) ;
 #line 267
-int printf(const char *arg_0x10f518338, ...) __attribute((__format__(__printf__, 1, 2))) ;
+int printf(const char *arg_0x1053df338, ...) __attribute((__format__(__printf__, 1, 2))) ;
 #line 282
-int vfprintf(FILE *arg_0x10f51d910, const char *arg_0x10f51dbe8, va_list arg_0x10f51b020) __attribute((__format__(__printf__, 2, 0))) ;
+int vfprintf(FILE *arg_0x1053e4910, const char *arg_0x1053e4be8, va_list arg_0x1053e2020) __attribute((__format__(__printf__, 2, 0))) ;
 #line 306
-FILE *fdopen(int arg_0x10f52f840, const char *arg_0x10f52fb18) __asm ("_""fdopen");
+FILE *fdopen(int arg_0x1053f6840, const char *arg_0x1053f6b18) __asm ("_""fdopen");
 
-int fileno(FILE *arg_0x10f52e930);
+int fileno(FILE *arg_0x1053f5930);
 #line 414
 typedef __darwin_off_t off_t;
 #line 449
-ssize_t getline(char **arg_0x10f5483c0, size_t *arg_0x10f5486a0, FILE *arg_0x10f548970) __attribute((visibility("default"))) ;
+ssize_t getline(char **arg_0x10540f3c0, size_t *arg_0x10540f6a0, FILE *arg_0x10540f970) __attribute((visibility("default"))) ;
 # 57 "/opt/tinyos-2.x/tos/lib/tossim/tos.h"
 typedef uint8_t bool;
 
@@ -1423,8 +1423,8 @@ typedef struct hashtable hashtable_t;
 #line 78
 struct hashtable *
 create_hashtable(unsigned int minsize, 
-unsigned int (*hashfunction)(void *arg_0x10f59e760), 
-int (*key_eq_fn)(void *arg_0x10f59d020, void *arg_0x10f59d2c0));
+unsigned int (*hashfunction)(void *arg_0x105465760), 
+int (*key_eq_fn)(void *arg_0x105464020, void *arg_0x1054642c0));
 #line 103
 #line 102
 int 
@@ -1690,7 +1690,7 @@ struct tm;
 struct tm;
 struct tm;
 # 211 "/usr/include/sys/time.h" 3
-int gettimeofday(struct timeval *arg_0x10f6abca8, void *arg_0x10f6aa020);
+int gettimeofday(struct timeval *arg_0x105572ca8, void *arg_0x105571020);
 # 43 "/opt/tinyos-2.x/tos/lib/tossim/sim_noise.h"
 enum __nesc_unnamed4257 {
   NOISE_MIN = -115, 
@@ -2013,7 +2013,7 @@ static inline void RandomInitialise(int ij, int kl);
 #line 103
 static double RandomUniform(void );
 # 46 "/opt/tinyos-2.x/tos/lib/tossim/randomlib.h"
-static inline void RandomInitialise(int arg_0x10f7bf770, int arg_0x10f7bf9d8);
+static inline void RandomInitialise(int arg_0x105686770, int arg_0x1056869d8);
 static double RandomUniform(void );
 # 50 "/opt/tinyos-2.x/tos/lib/tossim/sim_noise.c"
 int numCase1 = 0;
@@ -3863,11 +3863,11 @@ static error_t MeasureClockC__Init__init(void );
 # 56 "/opt/tinyos-2.x/tos/interfaces/TaskBasic.nc"
 static error_t SimSchedulerBasicP__TaskBasic__postTask(
 # 41 "/opt/tinyos-2.x/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x10f904960);
+uint8_t arg_0x1057cb960);
 # 64 "/opt/tinyos-2.x/tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP__TaskBasic__default__runTask(
 # 41 "/opt/tinyos-2.x/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x10f904960);
+uint8_t arg_0x1057cb960);
 # 46 "/opt/tinyos-2.x/tos/interfaces/Scheduler.nc"
 static void SimSchedulerBasicP__Scheduler__init(void );
 
@@ -3919,7 +3919,7 @@ message_t *
 
 AsyncReceiveAdapterP__Receive__default__receive(
 # 31 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/AsyncReceiveAdapterP.nc"
-am_id_t arg_0x10fcf6020, 
+am_id_t arg_0x105bbd020, 
 # 60 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3940,7 +3940,7 @@ uint8_t len);
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static error_t AsyncSendAdapterP__AMSend__send(
 # 31 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/AsyncSendAdapterP.nc"
-am_id_t arg_0x10fcf7c00, 
+am_id_t arg_0x105bbec00, 
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -3961,7 +3961,7 @@ void *
 
 AsyncSendAdapterP__AMSend__getPayload(
 # 31 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/AsyncSendAdapterP.nc"
-am_id_t arg_0x10fcf7c00, 
+am_id_t arg_0x105bbec00, 
 # 121 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4181,7 +4181,7 @@ error_t error);
 #line 40
 static error_t SenderDispatcherP__Send__send(
 # 39 "/opt/tinyos-2.x/apps/wustl/upma/system/SenderDispatcherP.nc"
-uint8_t arg_0x1101cd6d8, 
+uint8_t arg_0x1060146d8, 
 # 34 "/opt/tinyos-2.x/apps/wustl/upma/interfaces/AsyncSend.nc"
 message_t * msg, 
 
@@ -4197,7 +4197,7 @@ void *
 
 SenderDispatcherP__Send__getPayload(
 # 39 "/opt/tinyos-2.x/apps/wustl/upma/system/SenderDispatcherP.nc"
-uint8_t arg_0x1101cd6d8, 
+uint8_t arg_0x1060146d8, 
 # 68 "/opt/tinyos-2.x/apps/wustl/upma/interfaces/AsyncSend.nc"
 message_t * msg, 
 
@@ -4206,7 +4206,7 @@ uint8_t len);
 #line 48
 static void SenderDispatcherP__Send__default__sendDone(
 # 39 "/opt/tinyos-2.x/apps/wustl/upma/system/SenderDispatcherP.nc"
-uint8_t arg_0x1101cd6d8, 
+uint8_t arg_0x1060146d8, 
 # 44 "/opt/tinyos-2.x/apps/wustl/upma/interfaces/AsyncSend.nc"
 message_t * msg, 
 
@@ -4329,7 +4329,7 @@ message_t *
 
 SyncReceiveAdapterP__Receive__receive(
 # 3 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/SyncReceiveAdapterP.nc"
-am_id_t arg_0x11059d1a0, 
+am_id_t arg_0x1063e41a0, 
 # 60 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4350,7 +4350,7 @@ static void SyncSendAdapterP__SplitControl__stopDone(error_t error);
 # 99 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static void SyncSendAdapterP__AMSend__sendDone(
 # 3 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/SyncSendAdapterP.nc"
-am_id_t arg_0x1105e66c0, 
+am_id_t arg_0x10642d6c0, 
 # 92 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4386,7 +4386,7 @@ uint8_t len);
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static error_t TossimActiveMessageC__AMSend__send(
 # 39 "/opt/tinyos-2.x/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x1105caaf0, 
+am_id_t arg_0x106411af0, 
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -4407,7 +4407,7 @@ void *
 
 TossimActiveMessageC__AMSend__getPayload(
 # 39 "/opt/tinyos-2.x/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x1105caaf0, 
+am_id_t arg_0x106411af0, 
 # 121 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4422,7 +4422,7 @@ message_t *
 
 TossimActiveMessageC__Snoop__default__receive(
 # 41 "/opt/tinyos-2.x/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x1105c67c0, 
+am_id_t arg_0x10640d7c0, 
 # 60 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4539,7 +4539,7 @@ error_t error);
 # 99 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(
 # 40 "/opt/tinyos-2.x/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x110671488, 
+am_id_t arg_0x1064b8488, 
 # 92 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4556,7 +4556,7 @@ void *
 
 /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__getPayload(
 # 38 "/opt/tinyos-2.x/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x110673318, 
+uint8_t arg_0x1064ba318, 
 # 111 "/opt/tinyos-2.x/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4565,7 +4565,7 @@ uint8_t len);
 #line 89
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(
 # 38 "/opt/tinyos-2.x/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x110673318, 
+uint8_t arg_0x1064ba318, 
 # 85 "/opt/tinyos-2.x/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4765,7 +4765,7 @@ int sim_main_start_mote(void )   ;
 # 64 "/opt/tinyos-2.x/tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP__TaskBasic__runTask(
 # 41 "/opt/tinyos-2.x/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x10f904960);
+uint8_t arg_0x1057cb960);
 
 
 
@@ -4981,7 +4981,7 @@ message_t *
 
 AsyncReceiveAdapterP__Receive__receive(
 # 31 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/AsyncReceiveAdapterP.nc"
-am_id_t arg_0x10fcf6020, 
+am_id_t arg_0x105bbd020, 
 # 60 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -5022,7 +5022,7 @@ static inline message_t *AsyncReceiveAdapterP__Receive__default__receive(am_id_t
 # 99 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static void AsyncSendAdapterP__AMSend__sendDone(
 # 31 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/AsyncSendAdapterP.nc"
-am_id_t arg_0x10fcf7c00, 
+am_id_t arg_0x105bbec00, 
 # 92 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -5844,7 +5844,7 @@ uint8_t len);
 #line 48
 static void SenderDispatcherP__Send__sendDone(
 # 39 "/opt/tinyos-2.x/apps/wustl/upma/system/SenderDispatcherP.nc"
-uint8_t arg_0x1101cd6d8, 
+uint8_t arg_0x1060146d8, 
 # 44 "/opt/tinyos-2.x/apps/wustl/upma/interfaces/AsyncSend.nc"
 message_t * msg, 
 
@@ -6390,7 +6390,7 @@ static error_t SyncSendAdapterP__SplitControl__start(void );
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static error_t SyncSendAdapterP__AMSend__send(
 # 3 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/SyncSendAdapterP.nc"
-am_id_t arg_0x1105e66c0, 
+am_id_t arg_0x10642d6c0, 
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -6411,7 +6411,7 @@ void *
 
 SyncSendAdapterP__AMSend__getPayload(
 # 3 "/Users/wangwenchen/wcps_apps/pure-tdma/sim/SyncSendAdapterP.nc"
-am_id_t arg_0x1105e66c0, 
+am_id_t arg_0x10642d6c0, 
 # 121 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -6473,7 +6473,7 @@ static am_addr_t TossimActiveMessageC__amAddress(void );
 # 99 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC__AMSend__sendDone(
 # 39 "/opt/tinyos-2.x/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x1105caaf0, 
+am_id_t arg_0x106411af0, 
 # 92 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -6492,7 +6492,7 @@ message_t *
 
 TossimActiveMessageC__Snoop__receive(
 # 41 "/opt/tinyos-2.x/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x1105c67c0, 
+am_id_t arg_0x10640d7c0, 
 # 60 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -6511,7 +6511,7 @@ message_t *
 
 TossimActiveMessageC__Receive__receive(
 # 40 "/opt/tinyos-2.x/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x1105c7c18, 
+am_id_t arg_0x10640ec18, 
 # 60 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -6670,7 +6670,7 @@ static inline void */*TestNetworkAppC.Sender.AMQueueEntryP*/AMQueueEntryP__0__AM
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(
 # 40 "/opt/tinyos-2.x/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x110671488, 
+am_id_t arg_0x1064b8488, 
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -6691,7 +6691,7 @@ void *
 
 /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__getPayload(
 # 40 "/opt/tinyos-2.x/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x110671488, 
+am_id_t arg_0x1064b8488, 
 # 121 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -6700,7 +6700,7 @@ uint8_t len);
 # 89 "/opt/tinyos-2.x/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(
 # 38 "/opt/tinyos-2.x/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x110673318, 
+uint8_t arg_0x1064ba318, 
 # 85 "/opt/tinyos-2.x/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -7865,13 +7865,13 @@ static inline message_t *SyncReceiveAdapterP__Receive__receive(am_id_t id, messa
 }
 
 # 67 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC__Receive__receive(am_id_t arg_0x1105c7c18, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC__Receive__receive(am_id_t arg_0x10640ec18, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-  __nesc_result = SyncReceiveAdapterP__Receive__receive(arg_0x1105c7c18, msg, payload, len);
+  __nesc_result = SyncReceiveAdapterP__Receive__receive(arg_0x10640ec18, msg, payload, len);
 #line 67
 
 #line 67
@@ -8745,13 +8745,13 @@ static inline tossim_header_t *SyncSendAdapterP__getHeader(message_t *msg)
 }
 
 # 124 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
-inline static void * SyncSendAdapterP__AMSend__getPayload(am_id_t arg_0x1105e66c0, message_t * msg, uint8_t len){
+inline static void * SyncSendAdapterP__AMSend__getPayload(am_id_t arg_0x10642d6c0, message_t * msg, uint8_t len){
 #line 124
   void *__nesc_result;
 #line 124
 
 #line 124
-  __nesc_result = TossimActiveMessageC__AMSend__getPayload(arg_0x1105e66c0, msg, len);
+  __nesc_result = TossimActiveMessageC__AMSend__getPayload(arg_0x10642d6c0, msg, len);
 #line 124
 
 #line 124
@@ -9026,9 +9026,9 @@ static inline void SyncSendAdapterP__AMSend__sendDone(am_id_t id, message_t *msg
 }
 
 # 99 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
-inline static void TossimActiveMessageC__AMSend__sendDone(am_id_t arg_0x1105caaf0, message_t * msg, error_t error){
+inline static void TossimActiveMessageC__AMSend__sendDone(am_id_t arg_0x106411af0, message_t * msg, error_t error){
 #line 99
-  SyncSendAdapterP__AMSend__sendDone(arg_0x1105caaf0, msg, error);
+  SyncSendAdapterP__AMSend__sendDone(arg_0x106411af0, msg, error);
 #line 99
 }
 #line 99
@@ -9236,13 +9236,13 @@ uint8_t len)
 }
 
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
-inline static error_t SyncSendAdapterP__AMSend__send(am_id_t arg_0x1105e66c0, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t SyncSendAdapterP__AMSend__send(am_id_t arg_0x10642d6c0, am_addr_t addr, message_t * msg, uint8_t len){
 #line 69
   unsigned char __nesc_result;
 #line 69
 
 #line 69
-  __nesc_result = TossimActiveMessageC__AMSend__send(arg_0x1105e66c0, addr, msg, len);
+  __nesc_result = TossimActiveMessageC__AMSend__send(arg_0x10642d6c0, addr, msg, len);
 #line 69
 
 #line 69
@@ -9428,9 +9428,9 @@ static inline void SenderDispatcherP__Send__default__sendDone(uint8_t type, mess
 }
 
 # 48 "/opt/tinyos-2.x/apps/wustl/upma/interfaces/AsyncSend.nc"
-inline static void SenderDispatcherP__Send__sendDone(uint8_t arg_0x1101cd6d8, message_t * msg, error_t error){
+inline static void SenderDispatcherP__Send__sendDone(uint8_t arg_0x1060146d8, message_t * msg, error_t error){
 #line 48
-  switch (arg_0x1101cd6d8) {
+  switch (arg_0x1060146d8) {
 #line 48
     case TDMA_SLOT:
 #line 48
@@ -9446,7 +9446,7 @@ inline static void SenderDispatcherP__Send__sendDone(uint8_t arg_0x1101cd6d8, me
 #line 48
     default:
 #line 48
-      SenderDispatcherP__Send__default__sendDone(arg_0x1101cd6d8, msg, error);
+      SenderDispatcherP__Send__default__sendDone(arg_0x1060146d8, msg, error);
 #line 48
       break;
 #line 48
@@ -10355,13 +10355,13 @@ static inline message_t *TossimActiveMessageC__Snoop__default__receive(am_id_t i
 }
 
 # 67 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC__Snoop__receive(am_id_t arg_0x1105c67c0, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC__Snoop__receive(am_id_t arg_0x10640d7c0, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-    __nesc_result = TossimActiveMessageC__Snoop__default__receive(arg_0x1105c67c0, msg, payload, len);
+    __nesc_result = TossimActiveMessageC__Snoop__default__receive(arg_0x10640d7c0, msg, payload, len);
 #line 67
 
 #line 67
@@ -10557,13 +10557,13 @@ static inline void *AsyncSendAdapterP__AMSend__getPayload(am_id_t id, message_t 
 }
 
 # 124 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
-inline static void * /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__getPayload(am_id_t arg_0x110671488, message_t * msg, uint8_t len){
+inline static void * /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__getPayload(am_id_t arg_0x1064b8488, message_t * msg, uint8_t len){
 #line 124
   void *__nesc_result;
 #line 124
 
 #line 124
-  __nesc_result = AsyncSendAdapterP__AMSend__getPayload(arg_0x110671488, msg, len);
+  __nesc_result = AsyncSendAdapterP__AMSend__getPayload(arg_0x1064b8488, msg, len);
 #line 124
 
 #line 124
@@ -10649,13 +10649,13 @@ static inline message_t *AsyncReceiveAdapterP__Receive__default__receive(am_id_t
 }
 
 # 67 "/opt/tinyos-2.x/tos/interfaces/Receive.nc"
-inline static message_t * AsyncReceiveAdapterP__Receive__receive(am_id_t arg_0x10fcf6020, message_t * msg, void * payload, uint8_t len){
+inline static message_t * AsyncReceiveAdapterP__Receive__receive(am_id_t arg_0x105bbd020, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-  switch (arg_0x10fcf6020) {
+  switch (arg_0x105bbd020) {
 #line 67
     case 5:
 #line 67
@@ -10667,7 +10667,7 @@ inline static message_t * AsyncReceiveAdapterP__Receive__receive(am_id_t arg_0x1
 #line 67
     default:
 #line 67
-      __nesc_result = AsyncReceiveAdapterP__Receive__default__receive(arg_0x10fcf6020, msg, payload, len);
+      __nesc_result = AsyncReceiveAdapterP__Receive__default__receive(arg_0x105bbd020, msg, payload, len);
 #line 67
       break;
 #line 67
@@ -10757,9 +10757,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(am
 }
 
 # 99 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
-inline static void AsyncSendAdapterP__AMSend__sendDone(am_id_t arg_0x10fcf7c00, message_t * msg, error_t error){
+inline static void AsyncSendAdapterP__AMSend__sendDone(am_id_t arg_0x105bbec00, message_t * msg, error_t error){
 #line 99
-  /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(arg_0x10fcf7c00, msg, error);
+  /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(arg_0x105bbec00, msg, error);
 #line 99
 }
 #line 99
@@ -11069,9 +11069,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__send
 }
 
 # 89 "/opt/tinyos-2.x/tos/interfaces/Send.nc"
-inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x110673318, message_t * msg, error_t error){
+inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x1064ba318, message_t * msg, error_t error){
 #line 89
-  switch (arg_0x110673318) {
+  switch (arg_0x1064ba318) {
 #line 89
     case 0U:
 #line 89
@@ -11081,7 +11081,7 @@ inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint
 #line 89
     default:
 #line 89
-      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x110673318, msg, error);
+      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x1064ba318, msg, error);
 #line 89
       break;
 #line 89
@@ -11125,9 +11125,9 @@ static inline void SimSchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 64 "/opt/tinyos-2.x/tos/interfaces/TaskBasic.nc"
-inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x10f904960){
+inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x1057cb960){
 #line 64
-  switch (arg_0x10f904960) {
+  switch (arg_0x1057cb960) {
 #line 64
     case AsyncReceiveAdapterP__receiveDone_task:
 #line 64
@@ -11185,7 +11185,7 @@ inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x10f90496
 #line 64
     default:
 #line 64
-      SimSchedulerBasicP__TaskBasic__default__runTask(arg_0x10f904960);
+      SimSchedulerBasicP__TaskBasic__default__runTask(arg_0x1057cb960);
 #line 64
       break;
 #line 64
@@ -11262,13 +11262,13 @@ static inline error_t AsyncSendAdapterP__AMSend__send(am_id_t id, am_addr_t addr
 }
 
 # 69 "/opt/tinyos-2.x/tos/interfaces/AMSend.nc"
-inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x110671488, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x1064b8488, am_addr_t addr, message_t * msg, uint8_t len){
 #line 69
   unsigned char __nesc_result;
 #line 69
 
 #line 69
-  __nesc_result = AsyncSendAdapterP__AMSend__send(arg_0x110671488, addr, msg, len);
+  __nesc_result = AsyncSendAdapterP__AMSend__send(arg_0x1064b8488, addr, msg, len);
 #line 69
 
 #line 69
